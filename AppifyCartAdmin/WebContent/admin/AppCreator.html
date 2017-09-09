@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AppifyCart | Build Mobile App for Shopify Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="author" />
+    <!-- BEGIN LAYOUT FIRST STYLES -->
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
+    <!-- END LAYOUT FIRST STYLES -->
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="../assets/layouts/layout5/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout5/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="https://storage.googleapis.com/instapage-user-media/405cb106/7983323-0-apple-1.png" type="image/ico">
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-route.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-cookies.min.js"></script>
+    <script src="../thirdParty/angular-local-storage.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-animate.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-messages.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-resource.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-sanitize.min.js"></script>
+    <script src="../js/Home.js"></script>
+    <script src="../js/iOSAppData.js"></script>
+    <script src="../js/Utils.js"></script>
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo" ng-app="MyApp">
+<!-- Google Code for Shopify mobile app Conversion Page -->
+<script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 864911104;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "TcN5CNnP2mwQgP61nAM";
+        var google_remarketing_only = false;
+        /* ]]> */
+        </script>
+<style>
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+     padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+    /* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  padding-top: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 30%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: blue;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+.crossbutton{
+ padding-top: 20px;
+ left: 20px;
+ border: none;
+ background-color: transparent;
+ }
+ .crossbutton:focus {
+  outline: none;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+ // background-color: rgba(0, 0, 0, 0.8)
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+   // background-color : black ;
+    color: blue;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+</style>
+<!--
+
+<script>
+function openModal() {
+    console.log("Open pop up");
+    var theme = document.getElementById("whichTheme").value;
+    if (theme == "default"){
+        console.log("this is default theme");
+        document.getElementById("img1").src = "../assets/pages/img/theme/default1.png" ;
+        document.getElementById("img2").src = "../assets/pages/img/theme/default2.png" ;
+        document.getElementById("img3").src = "../assets/pages/img/theme/default3.png" ;
+        document.getElementById("img4").src = "../assets/pages/img/theme/default4.png" ;
+        document.getElementById("img5").src = "../assets/pages/img/theme/default5.png" ;
+        document.getElementById("img6").src = "../assets/pages/img/theme/default6.png" ;
+        document.getElementById("img7").src = "../assets/pages/img/theme/default7.png" ;
+        document.getElementById("img8").src = "../assets/pages/img/theme/default8.png" ;
+
+
+    }else{
+        console.log("this is diasleek theme");
+        document.getElementById("img1").src = "../assets/pages/img/theme/diasleek1.png" ;
+        document.getElementById("img2").src = "../assets/pages/img/theme/diasleek2.png" ;
+        document.getElementById("img3").src = "../assets/pages/img/theme/diasleek3.png" ;
+        document.getElementById("img4").src = "../assets/pages/img/theme/diasleek4.png" ;
+        document.getElementById("img5").src = "../assets/pages/img/theme/diasleek5.png" ;
+        document.getElementById("img6").src = "../assets/pages/img/theme/diasleek6.png" ;
+        document.getElementById("img7").src = "../assets/pages/img/theme/diasleek7.png" ;
+        document.getElementById("img8").src = "../assets/pages/img/theme/diasleek8.png" ;
+
+    }
+
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+function showdefaultTheme(){
+    console.log("eneterd");
+    var showThemebutton = document.getElementById("theme");
+    showThemebutton.style.display = 'none' ;
+    var showTheme = document.getElementsByClassName("row");
+    //showTheme.style.display = 'block' ;
+
+}
+
+</script>
+
+-->
+
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/864911104/?label=TcN5CNnP2mwQgP61nAM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+<style>
+    .mobile-icon{
+    padding: 15px;margin-right: 0;border-radius: 4px; border: 1px solid #e0e6ed;
+    }
+    .mobile-iconActive{
+    background: #1fb6ff;border-color: #27a4b0;
+    }
+
+    .phone-icon{
+        fill: #8492a6;
+    }
+    .phone-iconActive{
+        fill: #fff;
+    }
+
+</style>
+<script>
+    <!--method to toggle the css for choosing os type -->
+    function chooseOsType(e,other){
+        var currentId = $(e).attr('id');
+
+            $('#'+other).removeClass("mobile-iconActive");
+            $('#'+other).children().removeClass("phone-iconActive");
+            $('#'+other).children().addClass("phone-icon");
+
+            $('#'+currentId).addClass("mobile-iconActive");
+            $('#'+currentId).children().addClass("phone-iconActive");
+            $('#'+currentId).children().removeClass("phone-icon");
+    }
+</script>
+<script type="text/javascript" src="https://ebizon.iljmp.com/improvely.js"></script>
+<script type="text/javascript">
+        improvely.init('ebizon', 22);
+        improvely.conversion({
+            goal: 'sign up',
+            revenue: 2,
+            reference: ''
+        });
+    </script>
+<noscript>
+    <img src="https://ebizon.iljmp.com/track/conversion?project=22&goal=sign up&revenue=2&reference=" width="1" height="1" />
+</noscript>
+
+<!-- BEGIN CONTAINER -->
+<div class="wrapper">
+    <!-- BEGIN HEADER -->
+    <div ng-include="'../htmlTemplate/Header.html'"></div>
+    <!-- END HEADER -->
+    <div class="container-fluid" ng-controller="iOSAppDataCtrl">
+        <div class="spinner" ng-show="loading"></div>
+        <div class="page-content">
+            <!-- BEGIN SIDEBAR CONTENT LAYOUT -->
+            <div class="page-content-container">
+                <div class="page-content-row">
+                    <div class="page-content-col">
+                        <!-- BEGIN PAGE BASE CONTENT -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="portlet light bordered" id="form_wizard_1">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class=" icon-layers font-red"></i>
+                                            <span class="caption-subject font-red bold uppercase"> App Building -
+                                                        <span class="step-title"> Step 1 of 4 </span>
+                                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body form">
+                                        <form class="form-horizontal" action="#" id="submit_form" ng-submit="doCreateApp" method="POST">
+                                            <div class="form-wizard">
+                                                <div class="form-body">
+                                                    <ul class="nav nav-pills nav-justified steps">
+                                                        <li>
+                                                            <a href="#tab1" data-toggle="tab" class="step">
+                                                                <span class="number"> 1 </span>
+                                                                <span class="desc">
+                                                                            <i class="fa fa-check"></i> App Access Setup </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab2" data-toggle="tab" class="step">
+                                                                <span class="number"> 2 </span>
+                                                                <span class="desc">
+                                                                            <i class="fa fa-check"></i> App Assets Upload </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab3" data-toggle="tab" class="step active">
+                                                                <span class="number"> 3 </span>
+                                                                <span class="desc">
+                                                                            <i class="fa fa-check"></i> App Developer Account Credentials </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#tab4" data-toggle="tab" class="step">
+                                                                <span class="number"> 4 </span>
+                                                                <span class="desc">
+                                                                            <i class="fa fa-check"></i> App Build </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <div id="bar" class="progress progress-striped" role="progressbar">
+                                                        <div class="progress-bar progress-bar-success"> </div>
+                                                    </div>
+                                                    <div class="tab-content">
+                                                        <div class="alert alert-danger display-none">
+                                                            <button class="close" data-dismiss="alert"></button> You have some form errors. Please check below. </div>
+                                                        <div class="alert alert-success display-none">
+                                                            <button class="close" data-dismiss="alert"></button> Your form validation is successful! </div>
+                                                        <div class="alert alert-danger alert-api-validation-failed display-none">
+                                                            <button class="close" data-dismiss="alert"></button>Cannot connect to store. Please check your store URL and API key.</div>
+
+                                                        <!--<div class="tab-pane active" id="tab1">
+                                                            <h3 class="block">Provide your store details</h3>
+                                                            <div class="form-group form-md-radios">
+                                                                <label class="col-md-3 control-label"
+                                                                       for="form_control_1">Mobile OS</label>
+                                                                <div class="col-md-9">
+                                                                    <div class="md-radio-inline">
+                                                                        <div class="md-radio">
+                                                                            <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_9" name="radio2"
+                                                                                   value="ios" class="md-radiobtn"> <label
+                                                                                for="checkbox1_9"> <span style="visibility: hidden;"></span> <span
+                                                                                class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+                                                                            <div id="mobile-icon-ios" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-android')">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M52.4 8h-24.9c-1.9 0-3.5 1.6-3.5 3.5v57c0 1.9 1.6 3.5 3.5 3.5h25c1.9 0 3.5-1.6 3.5-3.5v-57c-.1-1.9-1.7-3.5-3.6-3.5zm-13.9 3h3c.3 0 .5.2.5.5s-.2.5-.5.5h-3c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm1.5 59c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-1 2-2 2zm13.9-6h-27.9v-48h27.9v48z"></path>
+                                                                                </svg>
+                                                                                <span style="color: #3c4858; display: block; margin-left: 35%;">iOS</span>
+                                                                            </div>
+                                                                        </label>
+                                                                        </div>
+
+                                                                        <div class="md-radio">
+                                                                            <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_8" name="radio2"
+                                                                                   value="android" class="md-radiobtn"> <label
+                                                                                for="checkbox1_8"> <span style="visibility: hidden;"></span> <span
+                                                                                class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+                                                                            <div id="mobile-icon-android" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-ios')">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M50.7 8h-21.5c-2.8 0-5.2 2.3-5.2 5.1v53.8c0 2.8 2.3 5.1 5.2 5.1h21.6c2.8 0 5.2-2.3 5.2-5.1v-53.8c-.1-2.8-2.4-5.1-5.3-5.1zm-13.3 2h5.1c.3 0 .5.2.5.5s-.2.5-.5.5h-5.1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm5.5 59.2c0 .6-.5.9-1 .9h-4c-.6 0-1-.4-1-.9v-.1c0-.6.5-1 1-1h4c.5 0 1 .4 1 1.1zm11-3.1h-27.9v-52.1h27.9v52.1z"></path>
+                                                                                </svg>
+                                                                                <span style="color: #3c4858; display: block; margin-left: 12%;">ANDROID</span>
+                                                                            </div>
+                                                                        </label>
+                                                                        </div>
+                                                                        <a class="btn default" onclick="popitup('WhichOSType.html')">
+                                                                            <i class="fa fa-question-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Store Platform</label>
+                                                                <div class="col-md-4">
+                                                                    <select name="store_plateform" id="store_plateform_list" ng-model="platform" class="form-control">
+                                                                        <option value="Shopify">Shopify</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div id = "isIOS" class="form-group"  style=" display: none;">
+                                                            <label class="control-label col-md-3">Choose theme</label>
+                                                            <div class="col-md-4">
+                                                                <select id = "whichTheme">
+                                                                    <option value="default">Default</option>
+                                                                    <option  value="diasleek">Diasleek</option>
+                                                                </select>
+                                                            </div>
+                                                                <a class="btn default" onclick="popitup('ThemeHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                                <a>
+                                                                    <button style="border:none; background-color: Transparent;text-decoration: underline;" onclick="openModal();currentSlide(1)">view theme</button>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Store Website
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="store_website" ng-model="store_website" />
+                                                                    <span class="help-block"> Provide your store's website address </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('ShopifyWebsiteHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Name of App
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="name_of_app" ng-model="name_of_app"/>
+                                                                    <span class="help-block"> Name of App you like to have in app store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('NameOfAppHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">API Key
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="store_api_key", ng-model="store_api_key"/>
+                                                                    <span class="help-block"> API Key from store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('APIKeyHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">API Key's password
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="textd" class="form-control" name="store_api_password"  ng-model="store_api_password"/>
+                                                                    <span class="help-block"> Password of above added API Key of store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('APIPasswordHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>-->
+                                                        <div class="tab-pane active" id="tab1">
+                                                        <!--<div ng-include="'../htmlTemplate/CreateBuildTab1.html'"></div>-->
+                                                            <h3 class="block">Choose the Platform Android or iOS for creating build.</h3>
+
+                                                            <div class="form-group form-md-radios">
+                                                                <label class="col-md-3 control-label"
+                                                                       for="form_control_1">Mobile OS</label>
+                                                                <div class="col-md-9">
+                                                                    <div class="md-radio-inline">
+                                                                        <div class="md-radio">
+                                                                            <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_9" name="radio2"
+                                                                                   value="ios" class="md-radiobtn"> <label
+                                                                                for="checkbox1_9"> <span style="visibility: hidden;"></span> <span
+                                                                                class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+                                                                            <div id="mobile-icon-ios" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-android')">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M52.4 8h-24.9c-1.9 0-3.5 1.6-3.5 3.5v57c0 1.9 1.6 3.5 3.5 3.5h25c1.9 0 3.5-1.6 3.5-3.5v-57c-.1-1.9-1.7-3.5-3.6-3.5zm-13.9 3h3c.3 0 .5.2.5.5s-.2.5-.5.5h-3c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm1.5 59c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-1 2-2 2zm13.9-6h-27.9v-48h27.9v48z"></path>
+                                                                                </svg>
+                                                                                <span style="color: #3c4858; display: block; margin-left: 35%;">iOS</span>
+                                                                            </div>
+                                                                        </label>
+                                                                        </div>
+
+                                                                        <div class="md-radio">
+                                                                            <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_8" name="radio2"
+                                                                                   value="android" class="md-radiobtn"> <label
+                                                                                for="checkbox1_8"> <span style="visibility: hidden;"></span> <span
+                                                                                class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+
+                                                                            <div id="mobile-icon-android" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-ios')">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M50.7 8h-21.5c-2.8 0-5.2 2.3-5.2 5.1v53.8c0 2.8 2.3 5.1 5.2 5.1h21.6c2.8 0 5.2-2.3 5.2-5.1v-53.8c-.1-2.8-2.4-5.1-5.3-5.1zm-13.3 2h5.1c.3 0 .5.2.5.5s-.2.5-.5.5h-5.1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm5.5 59.2c0 .6-.5.9-1 .9h-4c-.6 0-1-.4-1-.9v-.1c0-.6.5-1 1-1h4c.5 0 1 .4 1 1.1zm11-3.1h-27.9v-52.1h27.9v52.1z"></path>
+                                                                                </svg>
+                                                                                <span style="color: #3c4858; display: block; margin-left: 12%;">ANDROID</span>
+                                                                            </div>
+                                                                        </label>
+                                                                        </div>
+                                                                        <a class="btn default" onclick="popitup('WhichOSType.html')">
+                                                                            <i class="fa fa-question-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" ng-hide="isShopifyAppUser">
+                                                                <label class="control-label col-md-3">Store Platform</label>
+                                                                <div class="col-md-4">
+                                                                    <select name="store_plateform" id="store_plateform_list" ng-model="platform" class="form-control">
+                                                                        <option value="Shopify">Shopify</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Store Website
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" id="store_websiteID" class="form-control" name="store_website" ng-model="store_website" />
+                                                                    <span class="help-block"> Provide your store's website address </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('ShopifyWebsiteHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Name of App
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" id="name_of_appID" class="form-control" name="name_of_app" ng-model="name_of_app"/>
+                                                                    <span class="help-block"> Name of App you like to have in app store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('NameOfAppHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group" ng-hide="isShopifyAppUser">
+                                                                <label class="control-label col-md-3">API Key
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" id="store_api_keyID" class="form-control" name="store_api_key", ng-model="store_api_key"/>
+                                                                    <span class="help-block"> API Key from store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('APIKeyHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group" ng-hide="isShopifyAppUser">
+                                                                <label class="control-label col-md-3">API Key's password
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="textd" id="store_api_passwordID" class="form-control" name="store_api_password"  ng-model="store_api_password"/>
+                                                                    <span class="help-block"> Password of above added API Key of store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('APIPasswordHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group ng-hide" >
+                                                                <label class="control-label col-md-3">AcessToken
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="textd" id="store_shopify_accessToken" class="form-control" name="store_shopify_accessToken"  ng-model="store_shopify_accessToken"/>
+                                                                    <span class="help-block"> AcessToken for your store </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('APIPasswordHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">App Language
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <select name="app_language_list" id="app_language" ng-model="app_language" class="form-control" required>
+                                                                        <option value="en">English</option>
+                                                                        <option value="ar">Arabic</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab2">
+                                                            <h3 class="block">Provide App icons and splash screen images </h3>
+                                                            <div class="form-group ">
+                                                                <label class="control-label col-md-3">App Icon</label>
+                                                                <div class="col-md-9">
+                                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                            <img ng-src="{{appIconFile}}">
+                                                                        </div>
+                                                                        <div>
+                                                                        <span class="btn red btn-outline btn-file">
+                                                                            <span class="fileinput-new"> Select image </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="appIconFile" name="appIconFile"> </span>
+                                                                            <span class="help-block">Image of size 120x120 pixels in jpg, jpeg or png format</span>
+                                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                                        </div>
+                                                                        <a class="btn default" onclick="popitup('IconHelp.html')">
+                                                                            <i class="fa fa-question-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group ">
+                                                                <label class="control-label col-md-3">Splash screen </label>
+                                                                <div class="col-md-9">
+                                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                            <img ng-src="{{splashScreenFile}}">
+                                                                        </div>
+                                                                        <div>
+                                                                        <span class="btn red btn-outline btn-file">
+                                                                            <span class="fileinput-new"> Select image </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="splashScreenFile" name="splashScreenFile"> </span>
+                                                                            <span class="help-block">Image of size 1080x1920 pixels in jpg, jpeg or png format </span>
+                                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                                        </div>
+                                                                        <a class="btn default" onclick="popitup('LaunchScreen.html')">
+                                                                            <i class="fa fa-question-circle"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab3">
+                                                            <h3 class="block">Provide app certificates</h3>
+
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Bundle Identifier
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="bundleId" ng-model="bundleId"/>
+                                                                    <span class="help-block"> Unique bundle identifier for app </span>
+                                                                </div>
+                                                                <a class="btn default" onclick="popitup('BundleIdHelp.html')">
+                                                                    <i class="fa fa-question-circle"></i>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="ng-hide" ng-hide="androidEnabled" >
+                                                                <div class="form-group" ng-hide="true" >
+                                                                    <label class="control-label col-md-3">Build
+                                                                        Type</label>
+                                                                    <div class="col-md-4">
+                                                                        <select name="certificate_type" id="certificate_type_list"
+                                                                                ng-model="buildType" class="form-control" >
+                                                                            <option value="appStore" ng-selected="true">App Store</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                        -
+
+                                                                <div class="form-group">
+
+                                                                    <label class="control-label col-md-3">iOS Certificate</label>
+                                                                    <div class="col-md-3">
+                                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                            <div class="input-group input-large">
+                                                                                <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+                                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                                    <span class="fileinput-filename"> </span>
+                                                                                </div>
+                                                                                <span class="input-group-addon btn default btn-file">
+                                                                            <span class="fileinput-new"> Select file </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="iosCertificate" name="iosCertificate"> </span>
+                                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                                                <a class="btn default" onclick="popitup('IOSCertificateHelp.html')">
+                                                                                    <i class="fa fa-question-circle"></i>
+                                                                                </a>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ng-hide" ng-show="androidEnabled" >
+                                                                <div class="form-group" >
+                                                                    <label class="control-label col-md-3">Android Key Store</label>
+                                                                    <div class="col-md-3">
+                                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                            <div class="input-group input-large">
+                                                                                <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+                                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                                    <span class="fileinput-filename"> </span>
+                                                                                </div>
+                                                                                <span class="input-group-addon btn default btn-file">
+                                                                            <span class="fileinput-new"> Select file </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="androidKeyStore" name="androidKeyStore"> </span>
+                                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                                                <a class="btn default" onclick="popitup('AndroidKeyStoreHelp.html')">
+                                                                                    <i class="fa fa-question-circle"></i>
+                                                                                </a>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Passphrase
+                                                                    <span class="required"> * </span>
+                                                                </label>
+                                                                <div class="col-md-4">
+                                                                    <input type="text" class="form-control" name="passphrase" ng-model="passphrase" />
+                                                                    <a class="btn default" onclick="popitup('IOSPassphraseHelp.html')">
+                                                                        <i class="fa fa-question-circle"></i>
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="ng-hide" ng-show="androidEnabled" >
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Android Alias Name
+                                                                        <span class="required"> * </span>
+                                                                    </label>
+                                                                    <div class="col-md-4">
+                                                                        <input type="text" class="form-control" name="androidAliasName" ng-model="andoridAliasName" />
+                                                                        <a class="btn default" onclick="popitup('AndroidAliasNameHelp.html')">
+                                                                            <i class="fa fa-question-circle"></i>
+                                                                        </a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="ng-hide" ng-hide="androidEnabled" >
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Provisioning Profile</label>
+                                                                    <div class="col-md-3">
+                                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                            <div class="input-group input-large">
+                                                                                <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+                                                                                    <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                                                    <span class="fileinput-filename"> </span>
+                                                                                </div>
+                                                                                <span class="input-group-addon btn default btn-file">
+                                                                            <span class="fileinput-new"> Select file </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="iosProvProfile" name="iosProvProfile"> </span>
+                                                                                <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                                                <a class="btn default" onclick="popitup('IOSProvisoningProfileHelp.html')">
+                                                                                    <i class="fa fa-question-circle"></i>
+                                                                                </a>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab4">
+                                                            <h3 class="block">Build of App</h3><br/><br/><br/>
+                                                            <h3 class="block">Choose Language for App</h3>
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">App Language</label>
+                                                                <div class="col-md-4">
+                                                                    <select name="app_language_list" id="app_language" ng-model="app_language" class="form-control" required>
+                                                                        <option value="en">English</option>
+                                                                        <option value="ar">Arabic</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <br/><br/><br/>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <div class="row">
+                                                                <div class="col-md-offset-3 col-md-9">
+                                                                    <a href="javascript:;" class="btn default button-previous">
+                                                                        <i class="fa fa-angle-left"></i> Back </a>
+                                                                    <a href="javascript:;" class="btn btn-outline green button-next"> Continue
+                                                                        <i class="fa fa-angle-right"></i>
+                                                                    </a>
+
+                                                                    <a href="javascript:;" class="btn green button-submit" id="buildAlert" ng-click='doCreateApp()'>Create App</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Include the full screen loader, active till the build creation processes -->
+                                                        <div ng-include="'../htmlTemplate/Loader.html'"></div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PAGE BASE CONTENT -->
+                    </div>
+                </div>
+            </div>
+            <!-- END SIDEBAR CONTENT LAYOUT -->
+        </div>
+        <!-- BEGIN FOOTER -->
+        <p class="copyright"> 2017 &copy; EbizON
+        </p>
+        <!-- END FOOTER -->
+    </div>
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN CORE PLUGINS -->
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-notific8/jquery.notific8.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../assets/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/ui-bootbox.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="../assets/layouts/layout5/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+</body>
+</html>

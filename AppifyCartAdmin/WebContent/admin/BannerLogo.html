@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+            .banner-wrapper{
+                width: 25%;
+                display: inline-block;
+            }
+            @media screen and (max-width: 900px){
+                .banner-wrapper{
+                    width: 50% !important;
+                }
+            }
+        </style>
+    <meta charset="utf-8" />
+    <title>AppifyCart | Build Mobile App for Shopify Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- BEGIN LAYOUT FIRST STYLES -->
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
+    <!-- END LAYOUT FIRST STYLES -->
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="../assets/layouts/layout5/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout5/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" href="https://storage.googleapis.com/instapage-user-media/405cb106/7983323-0-apple-1.png" type="image/ico">
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-route.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-cookies.min.js"></script>
+    <script src="../thirdParty/angular-local-storage.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-animate.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-messages.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-resource.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-sanitize.min.js"></script>
+    <script src="../thirdParty/angular-ui-router.js"></script>
+    <script src="../thirdParty/angular-toastr.tpls.js"></script>
+    <script src="../thirdParty/satellizer.js"></script>
+    <script src="../thirdParty/jquery-2.1.4.min.js"></script>
+    <script src="../thirdParty/bootstrap.js"></script>
+    <script src="../thirdParty/ui-bootstrap-tpls-0.13.4.min.js"></script>
+    <!-- Application Code -->
+    <script src="../js/Home.js"></script>
+    <script src="../js/BannerLogo.js"></script>
+    <script src="../js/Utils.js"></script>
+
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo" ng-app="MyApp">
+<!-- BEGIN CONTAINER -->
+<div class="wrapper">
+    <!-- BEGIN HEADER -->
+    <div ng-include="'../htmlTemplate/Header.html'"></div>
+    <!-- END HEADER -->
+    <div class="container-fluid" ng-controller="BannerLogoCtrl">
+        <div class="page-content">
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="breadcrumbs">
+                <h1>App Title Logo and Banners</h1>
+            </div>
+            <!-- END BREADCRUMBS -->
+            <!-- BEGIN SIDEBAR CONTENT LAYOUT -->
+            <div class="page-content-container">
+                <div class="page-content-row">
+                    <div class="page-content-col">
+                        <!-- BEGIN PAGE BASE CONTENT -->
+                        <div class="portlet box blue">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i>Logo
+                                </div>
+                            </div>
+
+                            <div class="portlet-body form">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <form action="#" class="mt-repeater form-horizontal" ng-submit="saveLogo" method="POST">
+                                            <div data-repeater-list="group-a">
+                                                <div data-repeater-item class="mt-repeater-item">
+                                                    <!-- jQuery Repeater Container -->
+                                                    <div class="mt-repeater-input">
+                                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                <img ng-src="{{logoFile}}">
+                                                            </div>
+                                                            <div>
+																<span class="btn red btn-outline btn-file">
+                                                                            <span class="fileinput-new"> Select image </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="logoFile" name="logoFile"> </span>
+                                                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                            </div>
+                                                            <a class="btn default" onclick="popitup('LogoHelp.html')">
+                                                                <i class="fa fa-question-circle"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <a href="javascript:;" class="btn green" ng-click='saveLogo()'>Save Changes </a>
+                                                <a href="javascript:;" class="btn default">Cancel </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content-row">
+                <div class="page-content-col">
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>Banners
+                            </div>
+                        </div>
+
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="banner-wrapper" ng:repeat="item in bannerImages">
+                                    <div class="form-group">
+                                        <!-- jQuery Repeater Container -->
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                <img ng-src={{item.file}}>
+                                            </div>
+                                        </div>
+                                        <div class="margin-top-10">
+                                            <a href="javascript:;" id="{{item.file}}" class="btn green" ng-click='deleteImage($event)'>Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portlet-body form">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <form action="#" class="mt-repeater form-horizontal" ng-submit="saveBanners" method="POST">
+                                        <div data-repeater-list="group-a">
+                                            <div data-repeater-item class="mt-repeater-item">
+                                                <!-- jQuery Repeater Container -->
+                                                <div class="mt-repeater-input">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                            <img ng-src="{{bannerFile}}">
+                                                        </div>
+                                                        <div>
+																<span class="btn red btn-outline btn-file">
+                                                                            <span class="fileinput-new"> Select image </span>
+                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <input type="file" file-model="bannerFile" name="bannerFile"> </span>
+                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:;" data-repeater-create
+                                           class="btn btn-success mt-repeater-add"> <i
+                                                class="fa fa-plus"></i> Add
+                                        </a>
+                                        <div class="margin-top-10">
+                                            <a href="javascript:;" class="btn green" ng-click='saveBanners()'>Save Changes </a>
+                                            <a href="javascript:;" class="btn default">Cancel </a>
+                                            <label style="margin-left: 10px;">{{statusMessage}}</label>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END SIDEBAR CONTENT LAYOUT -->
+    </div>
+</div>
+</div>
+<!-- END CONTAINER -->
+
+<!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script>
+<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-notific8/jquery.notific8.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-repeater/jquery.repeater.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../assets/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/ui-bootbox.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/form-repeater.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="../assets/layouts/layout5/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('3123-926-10-8257');/*]]>*/
+function trackAdwordsConversion(id, label) {
+    var image = new Image(1, 1);
+    var base = "http://www.googleadservices.com/pagead/conversion";
+    image.src = base + "/" + id + "/?label=" + label + "&script=0";
+}
+olark("api.chat.onBeginConversation", function(){
+    // Make sure to replace the ID and Label with your own ID and labels.
+    trackAdwordsConversion("971670269", "2BsoCI7e_F0Q_YWqzwM");
+});
+</script><noscript><a href="https://www.olark.com/site/3123-926-10-8257/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olarklive chat software</a></noscript>
+<!-- end olark code -->​
+</body>
+
+</html>

@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Get Started | Appifycart</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<script type="text/javascript" src="./../appifyAssets/6ac1534335"></script>
+		<script src="./Get Started _ Appifycart_files/nr-998.min.js"></script>
+		<script type="text/javascript" data-cfasync="false">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+	
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="RESOURCES">
+		<meta property="og:description" content="FacebookTwitterLinkedIn">
+		<meta property="og:site_name" content="RESOURCES">
+
+		<!-- font injector --> 
+		<link type="text/css" rel="stylesheet" media="screen, print" href="./../appifyAssets/css">
+		<!-- end -->
+		
+		<style type="text/css" media="screen">
+				.page-element .btn,
+				.page-element .contents,
+				.page-element.widget-form form,
+				.page-element.widget-form form input,
+				.page-element.widget-form form textarea,
+				.page-element.widget-form form select,
+				.page-element.widget-form form label
+				{	font-family: Lato;
+					font-weight: 300;
+				}
+
+				.page-element.widget-headline .contents h1,
+				.page-element.widget-headline .contents h2,
+				.page-element.widget-headline .contents h3,
+				.page-element.widget-headline .contents h4,
+				.page-element.widget-headline .contents h5,
+				.page-element.widget-headline .contents h6
+				{	font-family: Lato;
+					font-weight: 400;
+				}
+
+				[id^=___plusone] { width:51px !important; }
+
+				div.social.lines [id^=___plusone] { width:62px !important; }
+				div.social.lines span[class^=IN-widget] { min-width:70px !important; }
+				div.social.buttons [id^=___plusone] { width:36px !important; }
+				div.social.buttons div[class^=fb-like] { width:58px !important; }
+				div.social.tiles [id^=___plusone] { height:63px !important; margin-top: 2px !important; }
+				div.social.tiles .fb-like iframe { margin-top: 1px !important; }
+
+				.widget-testimonial.style-1 .contents div.testimonial-text
+				{
+					margin-top: 0;
+				}
+
+				@media screen and (max-width: 768px)
+				{
+					.notification > .notification-inner
+					{
+						width: auto;
+						position: fixed;
+						top: 40%;
+						left: 1em !important;
+						right: 1em !important;
+						font-size: 24px;
+					}
+				}
+				
+				/* Safari only fix */
+				@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+				{	.widget-form .select-outer select
+					{
+						padding-left: 10px;
+					}
+					.widget-form.mobile-form .select-outer select
+					{
+						padding-left: 10px;
+					}
+				}}
+
+		</style>
+				
+		<link rel="stylesheet" type="text/css" href="./../appifyAssets/031a761e2b05d2bed213fd1f07412755.css" media="screen">
+
+		<script type="text/javascript" data-cfasync="false" src="./../appifyAssets/a5cb880a745154a6a1a45f3465215dfd.js"></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" id="mobile-viewport">
+		
+		<script type="text/javascript" data-cfasync="false" class="instapage-noscrap">var ijQuery = jQuery.noConflict(true);</script>
+		<script type="text/javascript" data-cfasync="false" class="instapage-noscrap">
+			var $ = ijQuery;
+			var jQuery = ijQuery;
+			window.__page_id = 2670858;
+			window.__version = 76;
+			window.__variant = 'A';
+			window.__is_tablet = false;
+			window.__page_domain = '//appifycart.com';
+			window.__instapage_services = '//app.instapage.com';
+			window.__instapage_proxy_services = '//appifycart.com/instapage-proxy-services?url=';
+			window.__preview = false;
+			window.__facebook = false;
+			window.__page_type = 2;
+			window.__mobile_version = 2;
+			
+			var page_version = 76;
+
+			var _Translate = new Translate();
+
+			if( ijQuery === 'undefined' )
+			{
+				var ijQuery = jQuery;
+			}
+
+			ijQuery(document).ready(function()
+			{
+				window._Mobile_helper = new MobileHelper();
+				window._Mobile_helper.initViewport( 960, true );
+
+				try
+				{
+					ijQuery('input, textarea').placeholder();
+				}
+				catch( e )
+				{
+				}
+			});
+
+			ijQuery( window ).load( function()
+			{
+				var notification_loader;
+
+								ijQuery( 'body' ).hide().show();
+
+								notification_loader = ijQuery( '.notification-loader' );
+				notification_loader.attr( 'src', notification_loader.attr( 'rel' ) );
+			});
+
+			_Translate.set( "Problem loading google map", "Problem loading google map" );
+
+			is_new_mobile_visible = function()
+			{
+				if( !window.matchMedia )
+				{
+					return false;
+				}
+				return window.matchMedia('screen and (max-width: 620px), screen and (max-width: 999px) and (-webkit-min-device-pixel-ratio: 1.5)').matches;
+			}
+		</script>
+
+		<link rel="shortcut icon" href="https://storage.googleapis.com/instapage-user-media/405cb106/7983323-0-apple-1.png" type="image/ico">
+		<style type="text/css">
+				html
+				{
+					height: 100%;
+				};
+			</style>
+
+		<script type="text/javascript" data-cfasync="false">
+				setTimeout(function()
+				{
+					"use strict";
+					try
+					{
+						var body = document.body;
+						var html = document.documentElement;
+						var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+						html.style.setProperty( 'height', height + 'px' );
+					}
+					catch( e )
+					{
+					}
+				}, 1 );
+		</script>
+			
+		<style type="text/css">
+				body
+				{
+					background-color: #ffffff;					
+					background-position: top left;
+					background-repeat: repeat;																		background-size: cover;
+					-webkit-background-size: cover;
+					-moz-background-size: cover;
+					-o-background-size: cover;
+				}
+				
+				.page .page-block .block-inner { background-color: transparent; }
+		</style>
+		
+<style type="text/css">
+
+#element-156  
+{
+	height: 57px;
+	width: 415px;
+	left: 273px;
+	top: 71px;
+	z-index: 3;
+}
+
+#element-156 p, #element-156 ul, #element-156 ol, #element-156 h1 
+{
+	font-size: 41px;
+	color: rgb(0, 0, 0);
+	line-height: 57px;
+	text-align: center;
+}
+	
+#element-165  
+{
+	height: 48px;
+	width: 433px;
+	left: 492px;
+	top: 537px;
+	z-index: 4;
+}
+
+#element-165 p, #element-165 ul, #element-165 ol, #element-165 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: left;
+}
+	
+#element-187  
+{
+	height: 107px;
+	width: 10px;
+	left: 369px;
+	top: 508px;
+	z-index: 5;
+}
+	
+#element-167  
+{
+	height: 102px;
+	width: 93px;
+	left: 388px;
+	top: 511px;
+	z-index: 6;
+}
+
+#element-167 p, #element-167 ul, #element-167 ol, #element-167 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center;
+}
+	
+#element-188  
+{
+	height: 107px;
+	width: 10px;
+	left: 45px;
+	top: 508px;
+	z-index: 7;
+}
+	
+#element-168  
+{
+	height: 177px;
+	width: 255px;
+	left: 55px;
+	top: 473px;
+	z-index: 8;
+}
+	
+#element-157  
+{
+	height: 48px;
+	width: 433px;
+	left: 152px;
+	top: 306px;
+	z-index: 9;
+}
+
+#element-157 p, #element-157 ul, #element-157 ol, #element-157 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: left;
+}
+	
+#element-158  
+{
+	height: 107px;
+	width: 10px;
+	left: 29px;
+	top: 277px;
+	z-index: 10;
+}
+	
+#element-159  
+{
+	height: 102px;
+	width: 93px;
+	left: 51px;
+	top: 279px;
+	z-index: 11;
+}
+
+#element-159 p, #element-159 ul, #element-159 ol, #element-159 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center;
+}
+	
+#element-162  
+{
+	height: 177px;
+	width: 255px;
+	left: 670px;
+	top: 242px;
+	z-index: 12;
+}
+	
+#element-169  
+{
+	height: 107px;
+	width: 10px;
+	left: 660px;
+	top: 277px;
+	z-index: 13;
+}
+	
+#element-179  
+{
+	height: 48px;
+	width: 433px;
+	left: 163px;
+	top: 796px;
+	z-index: 14;
+}
+
+#element-179 p, #element-179 ul, #element-179 ol, #element-179 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: left;
+}
+	
+#element-189  
+{
+	height: 107px;
+	width: 10px;
+	left: 34px;
+	top: 767px;
+	z-index: 15;
+}
+	
+#element-181  
+{
+	height: 102px;
+	width: 93px;
+	left: 55px;
+	top: 770px;
+	z-index: 16;
+}
+
+#element-181 p, #element-181 ul, #element-181 ol, #element-181 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center;
+}
+	
+#element-190  
+{
+	height: 107px;
+	width: 10px;
+	left: 664px;
+	top: 767px;
+	z-index: 17;
+}
+	
+#element-182  
+{
+	height: 177px;
+	width: 255px;
+	left: 674px;
+	top: 732px;
+	z-index: 18;
+}
+	
+#element-283  
+{
+	height: 200px;
+	width: 960px;
+	left: -1px;
+	top: 119px;
+	z-index: 19;
+}
+	
+#element-284  
+{
+	height: 114px;
+	width: 674px;
+	left: 285px;
+	top: 32px;
+	z-index: 20;
+}
+	
+#element-287  
+{
+	height: 11px;
+	width: 890px;
+	left: 37px;
+	top: 513px;
+	z-index: 21;
+}
+	
+#element-291  
+{
+	height: 32px;
+	width: 32px;
+	left: 895px;
+	top: 24px;
+	z-index: 22;
+}
+	
+#element-292  
+{
+	height: 11px;
+	width: 944px;
+	left: 9px;
+	top: 986px;
+	z-index: 23;
+}
+	
+#element-293  
+{
+	height: 22px;
+	width: 49px;
+	left: 9px;
+	top: 42px;
+	z-index: 24;
+}
+
+#element-293 p, #element-293 ul, #element-293 ol, #element-293 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left;
+}
+	
+#element-294  
+{
+	height: 22px;
+	width: 69px;
+	left: 307px;
+	top: 45px;
+	z-index: 25;
+}
+
+#element-294 p, #element-294 ul, #element-294 ol, #element-294 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left;
+}
+	
+#element-295  
+{
+	height: 22px;
+	width: 101px;
+	left: 518px;
+	top: 45px;
+	z-index: 26;
+}
+
+#element-295 p, #element-295 ul, #element-295 ol, #element-295 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left;
+}
+	
+#element-296  
+{
+	height: 22px;
+	width: 90px;
+	left: 775px;
+	top: 45px;
+	z-index: 27;
+}
+
+#element-296 p, #element-296 ul, #element-296 ol, #element-296 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left;
+}
+	
+#element-297  
+{
+	height: 144px;
+	width: 226px;
+	left: 9px;
+	top: 87px;
+	z-index: 28;
+}
+
+#element-297 p, #element-297 ul, #element-297 ol, #element-297 h1 
+{
+	font-size: 15px;
+	color: rgb(145, 145, 145);
+	line-height: 24px;
+	text-align: left;
+}
+	
+#element-298  
+{
+	height: 135px;
+	width: 110px;
+	left: 307px;
+	top: 87px;
+	z-index: 29;
+}
+
+#element-298 p, #element-298 ul, #element-298 ol, #element-298 h1 
+{
+	font-size: 15px;
+	color: rgb(145, 145, 145);
+	line-height: 27px;
+	text-align: left;
+}
+	
+#element-299  
+{
+	height: 135px;
+	width: 142px;
+	left: 518px;
+	top: 87px;
+	z-index: 30;
+}
+
+#element-299 p, #element-299 ul, #element-299 ol, #element-299 h1 
+{
+	font-size: 15px;
+	color: rgb(145, 145, 145);
+	line-height: 27px;
+	text-align: left;
+}
+	
+#element-300  
+{
+	height: 81px;
+	width: 142px;
+	left: 775px;
+	top: 87px;
+	z-index: 31;
+}
+
+#element-300 p, #element-300 ul, #element-300 ol, #element-300 h1 
+{
+	font-size: 15px;
+	color: rgb(145, 145, 145);
+	line-height: 27px;
+	text-align: left;
+}
+	
+#element-303  
+{
+	height: 22px;
+	width: 532px;
+	left: 215px;
+	top: 269px;
+	z-index: 32;
+}
+
+#element-303 p, #element-303 ul, #element-303 ol, #element-303 h1 
+{
+	font-size: 14px;
+	color: rgb(137, 143, 156);
+	line-height: 22px;
+	text-align: center;
+}
+	
+#element-304  
+{
+	height: 37px;
+	width: 200px;
+	left: 5px;
+	top: 21px;
+	z-index: 33;
+}
+
+			
+#page-block-5syvugne3qxe0zfr { height: 524px; }
+
+#page-block-5syvugne3qxe0zfr .border-holder
+{
+	background-image: none;
+	background-color: transparent;
+	background-repeat: repeat;						
+	background-position: center top;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	width: auto;
+	border-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	height: 524px;
+	background-attachment: fixed;
+}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page-block-5syvugne3qxe0zfr .color-overlay
+{
+
+}
+
+#page-block-5syvugne3qxe0zfr .block-inner
+{
+	margin-top: 0px;
+}
+
+			
+#page_block_below_fold { height: 997px; }
+
+#page_block_below_fold .border-holder
+{
+	background-image: none;
+	background-color: transparent;
+	background-repeat: repeat;
+	background-position: top left;
+	width: auto;
+	border-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	height: 997px;
+}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page_block_below_fold .color-overlay
+{
+
+}
+
+#page_block_below_fold .block-inner
+{
+	margin-top: 0px;
+}
+
+			
+#page-block-3m1o81ntew90jum3hv76kzkt9 { height: 291px; }
+
+#page-block-3m1o81ntew90jum3hv76kzkt9 .border-holder
+{	background-image: none;
+	background-color: transparent;
+	background-repeat: repeat;
+	background-position: top left;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	width: auto;
+	border-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	height: 291px;
+}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page-block-3m1o81ntew90jum3hv76kzkt9 .color-overlay
+{
+
+}
+
+#page-block-3m1o81ntew90jum3hv76kzkt9 .block-inner
+{
+	margin-top: 0px;
+}
+
+	
+@media
+screen and (max-width: 620px),
+screen and (max-width: 999px) and (-webkit-min-device-pixel-ratio: 1.5) and ( max-device-width: 1280px ) and (max-device-height: 720px),
+screen and (max-width: 999px) and (-webkit-min-device-pixel-ratio: 1.5) and ( max-device-width: 1000px )
+{
+	body
+	{
+		min-width: 400px;
+		width: 100%;
+	}
+	.page.page2
+	{
+		width: 100%;
+	}
+	.page.page2 .block-inner
+	{
+		width: 400px;
+		margin: 0 auto;
+	}
+	.page.page2.new-mobile-preview .block-inner
+	{
+		width: auto;
+	}
+
+
+	.widget-form .field-checkbox .field-element label:before,
+	.widget-form .field-radio .field-element label:before
+	{
+		top: 16px;
+	}
+	.widget-form .field-checkbox .field-element label:after
+	{
+		top: 21px;
+	}
+
+	.widget-form .field-radio .field-element label:after
+	{
+		top: 16px;
+	}
+
+	.widget-form .select-outer
+	{
+		overflow: hidden;
+		margin-bottom: 8px;
+		margin-top: 8px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+	}
+
+	.widget-form .select-outer select
+	{
+		width: calc( 100% - 1px );
+		height: 56px;
+		border: 0;
+		margin: 0;
+		-webkit-appearance: none;
+		line-height: 30px;
+		border-style: solid;
+		border-width: 1px;
+		background-image: url( '//storage.googleapis.com/instapage-app-assets/332/img/builder2/select-arrow-drop-down.png' );
+		background-position: right;
+		background-repeat: no-repeat;
+	}
+	.widget-form .form-input[type="text"],
+	.widget-form .form-input[type="password"],
+	.widget-form .form-input[type="email"],
+	.widget-form textarea.form-input
+	{
+		padding-top: 12px;
+		padding-bottom: 9px;
+		font-size: 20px;
+		line-height: 22px;
+		height: 56px;
+		-webkit-appearance: none;
+	}
+
+	.widget-form .label-outside,
+	.widget-form .outside-top,
+	.widget-form .field-element label
+	{
+		font-size: 20px;
+		line-height: 22px;
+		padding-top: 12px;
+		padding-bottom: 9px;
+	}
+
+	.widget-form select
+	{
+		font-size: 20px;
+		height: 56px;
+		padding-left: 9px;
+		width: calc( 100% + 2px );
+		-moz-padding-start: 5px;
+	}
+
+	.widget-form .input-holder.field-checkbox > label.outside-top,
+	.widget-form .input-holder.field-radio > label.outside-top,
+	.widget-form .field-container.edit.field-checkbox > label.label-outside,
+	.widget-form .field-container.edit.field-radio > label.label-outside
+	{
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+
+	.widget-form .form-option-element label,
+	.widget-form .field-element label
+	{
+		font-size: 20px;
+		line-height: 22px;
+		padding-bottom: 0;
+		margin-bottom: 0px;
+	}
+
+	.new_mobile .widget-form textarea.form-input.shortnice
+	{
+		height: 56px;
+	}
+
+						
+#element-304  
+{
+	height: 37px;
+	width: 200px;
+	left: 100px;
+	top: 40px;
+	z-index: 33;
+}
+					
+#element-291  
+{
+	height: 32px;
+	width: 32px;
+	left: 355px;
+	top: 113px;
+	z-index: 22;
+}
+					
+#element-284  
+{
+	height: 114px;
+	width: 140px;
+	left: 259px;
+	top: 129px;
+	z-index: 20;
+}
+					
+#element-283  
+{
+	height: 200px;
+	width: 360px;
+	left: 21px;
+	top: 177px;
+	z-index: 19;
+}
+					
+#element-287  
+{
+	height: 11px;
+	width: 360px;
+	left: 21px;
+	top: 662px;
+	z-index: 21;
+}
+					
+#element-156  
+{
+	height: 25px;
+	width: 278px;
+	left: 61px;
+	top: 82px;
+	z-index: 3;
+}
+
+#element-156 p, #element-156 ul, #element-156 ol, #element-156 h1 
+{
+	font-size: 18px;
+	color: rgb(0, 0, 0);
+	line-height: 25px;
+	text-align: center !important;
+}
+					
+#element-162  
+{
+	height: 177px;
+	width: 255px;
+	left: 125px;
+	top: 182px;
+	z-index: 12;
+}
+					
+#element-158  
+{
+	display: none;
+}
+					
+#element-169  
+{
+	height: 107px;
+	width: 10px;
+	left: 115px;
+	top: 217px;
+	z-index: 13;
+}
+					
+#element-159  
+{
+	height: 102px;
+	width: 93px;
+	left: 7px;
+	top: 222px;
+	z-index: 11;
+}
+
+#element-159 p, #element-159 ul, #element-159 ol, #element-159 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center !important;
+}
+					
+#element-157  
+{
+	height: 72px;
+	width: 381px;
+	left: 7px;
+	top: 399px;
+	z-index: 9;
+}
+
+#element-157 p, #element-157 ul, #element-157 ol, #element-157 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: center !important;
+}
+					
+#element-168  
+{
+	height: 177px;
+	width: 255px;
+	left: 126px;
+	top: 547px;
+	z-index: 8;
+}
+					
+#element-188  
+{
+	height: 107px;
+	width: 10px;
+	left: 116px;
+	top: 582px;
+	z-index: 7;
+}
+					
+#element-187  
+{
+	display: none;
+}
+					
+#element-167  
+{
+	height: 102px;
+	width: 93px;
+	left: 8px;
+	top: 587px;
+	z-index: 6;
+}
+
+#element-167 p, #element-167 ul, #element-167 ol, #element-167 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center !important;
+}
+					
+#element-165  
+{
+	height: 72px;
+	width: 385px;
+	left: 8px;
+	top: 766px;
+	z-index: 4;
+}
+
+#element-165 p, #element-165 ul, #element-165 ol, #element-165 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: center !important;
+}
+					
+#element-182  
+{
+	height: 177px;
+	width: 255px;
+	left: 128px;
+	top: 907px;
+	z-index: 18;
+}
+					
+#element-189  
+{
+	display: none;
+}
+					
+#element-190  
+{
+	height: 107px;
+	width: 10px;
+	left: 118px;
+	top: 942px;
+	z-index: 17;
+}
+					
+#element-181  
+{
+	height: 102px;
+	width: 93px;
+	left: 11px;
+	top: 947px;
+	z-index: 16;
+}
+
+#element-181 p, #element-181 ul, #element-181 ol, #element-181 h1 
+{
+	font-size: 73px;
+	color: rgb(230, 230, 230);
+	line-height: 102px;
+	text-align: center !important;
+}
+					
+#element-179  
+{
+	height: 72px;
+	width: 380px;
+	left: 11px;
+	top: 1128px;
+	z-index: 14;
+}
+
+#element-179 p, #element-179 ul, #element-179 ol, #element-179 h1 
+{
+	font-size: 17px;
+	color: rgb(0, 0, 0);
+	line-height: 24px;
+	text-align: center !important;
+}
+					
+#element-292  
+{
+	height: 11px;
+	width: 360px;
+	left: 20px;
+	top: 1269px;
+	z-index: 23;
+}
+					
+#element-293  
+{
+	height: 22px;
+	width: 49px;
+	left: 176px;
+	top: 25px;
+	z-index: 24;
+}
+
+#element-293 p, #element-293 ul, #element-293 ol, #element-293 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left !important;
+}
+					
+#element-294  
+{
+	height: 22px;
+	width: 69px;
+	left: 20px;
+	top: 208px;
+	z-index: 25;
+}
+
+#element-294 p, #element-294 ul, #element-294 ol, #element-294 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left !important;
+}
+					
+#element-295  
+{
+	height: 22px;
+	width: 101px;
+	left: 231px;
+	top: 208px;
+	z-index: 26;
+}
+
+#element-295 p, #element-295 ul, #element-295 ol, #element-295 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left !important;
+}
+					
+#element-296  
+{
+	height: 22px;
+	width: 90px;
+	left: 20px;
+	top: 397px;
+	z-index: 27;
+}
+
+#element-296 p, #element-296 ul, #element-296 ol, #element-296 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 22px;
+	text-align: left !important;
+}
+					
+#element-297  
+{
+	height: 104px;
+	width: 211px;
+	left: 95px;
+	top: 62px;
+	z-index: 28;
+}
+
+#element-297 p, #element-297 ul, #element-297 ol, #element-297 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 26px;
+	text-align: center !important;
+}
+					
+#element-298  
+{
+	height: 130px;
+	width: 110px;
+	left: 20px;
+	top: 250px;
+	z-index: 29;
+}
+
+#element-298 p, #element-298 ul, #element-298 ol, #element-298 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 26px;
+	text-align: left !important;
+}
+					
+#element-299  
+{
+	height: 130px;
+	width: 142px;
+	left: 231px;
+	top: 250px;
+	z-index: 30;
+}
+
+#element-299 p, #element-299 ul, #element-299 ol, #element-299 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 26px;
+	text-align: left !important;
+}
+					
+#element-300  
+{
+	height: 78px;
+	width: 142px;
+	left: 20px;
+	top: 435px;
+	z-index: 31;
+}
+
+#element-300 p, #element-300 ul, #element-300 ol, #element-300 h1 
+{
+	font-size: 16px;
+	color: rgb(145, 145, 145);
+	line-height: 26px;
+	text-align: left !important;
+}
+					
+#element-303  
+{
+	height: 16px;
+	width: 402px;
+	left: 0px;
+	top: 544px;
+	z-index: 32;
+}
+
+#element-303 p, #element-303 ul, #element-303 ol, #element-303 h1 
+{
+	font-size: 12px;
+	color: rgb(137, 143, 156);
+	line-height: 16px;
+	text-align: center !important;
+}
+			
+						
+#page-block-5syvugne3qxe0zfr { height: 673px; }
+
+#page-block-5syvugne3qxe0zfr .border-holder
+{	background-image: none;
+	background-color: transparent;
+	background-repeat: repeat;
+	background-position: center top;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	width: auto;
+	border-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	height: 673px;
+	background-attachment: fixed;
+}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page-block-5syvugne3qxe0zfr .color-overlay
+{
+
+}
+
+#page-block-5syvugne3qxe0zfr .block-inner
+{
+	margin-top: 0px;
+}
+
+					
+#page_block_below_fold { height: 1280px; }
+
+#page_block_below_fold .border-holder
+{
+			background-image: none;
+	
+			background-color: transparent;
+	
+	background-repeat: repeat;						background-position: top left;
+			
+	
+		
+		width: auto;
+		border-width: 0;
+		border-top-width: 0px;
+		border-bottom-width: 0px;
+
+	
+	height: 1280px;
+
+	}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page_block_below_fold .color-overlay
+{
+	}
+
+	#page_block_below_fold .block-inner
+	{
+		margin-top: 0px;
+			}
+
+					
+#page-block-3m1o81ntew90jum3hv76kzkt9 { height: 560px; }
+
+#page-block-3m1o81ntew90jum3hv76kzkt9 .border-holder
+{
+	background-image: none;
+	background-color: transparent;
+	background-repeat: repeat;
+	background-position: top left;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	width: auto;
+	border-width: 0;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	height: 560px;
+}
+
+@media only screen and (max-width: 770px) {
+	.border-holder {
+		background-attachment: scroll !important;
+	}
+}
+
+#page-block-3m1o81ntew90jum3hv76kzkt9 .color-overlay
+{
+	}
+
+	#page-block-3m1o81ntew90jum3hv76kzkt9 .block-inner
+	{
+		margin-top: 0px;
+			}
+
+			}
+
+@media
+screen and (min-width: 621px)  and (-webkit-max-device-pixel-ratio: 1.5),
+screen and (min-width: 1000px) and (-webkit-max-device-pixel-ratio: 1.5)
+{
+	.new_mobile .page.page2.mobile .block-inner
+	{
+		width: 960px;
+	}
+}
+</style>
+
+<style>
+  <style>
+        .mofluid_topNav {
+		float:right;
+		width:100%;
+		position:relative;
+	}
+	.mofluid_menu_ul {
+		float:right;
+		width:100%;
+		margin:0;
+		padding:0;
+		text-align:right;
+	}
+	.mofluid_menu_ul li{
+		list-style:none;
+		display:inline;
+		padding:5px;
+		position:relative;
+	}
+	.mofluid_menu_ul li a{
+		padding:4px;
+		text-decoration:none;
+		color:#3b5998;
+		text-transform:uppercase;
+		text-align:center;
+        font-weight: 500;
+	}
+	.mofluid_menu_ul li a:hover {
+		background:rgba(0,0,0,0.17);
+		border-radius:4px;
+	}
+	.mofluid_menu_ul li:last-child a:hover {
+	    background:none;
+	}
+	.mofluid_menu_ul li ul.mfld_submenu {
+		position:absolute;
+		background:rgba(0,0,0,0.5);
+		width:220px;
+		left:0;
+		float:left;
+		margin:0;
+		padding:0;
+		display:none;
+	}
+	.mofluid_menu_ul li:hover ul.mfld_submenu {
+		left:0;
+		top:26px;
+		display:block;
+		border-radius:4px;
+	}
+	.mofluid_menu_ul li:hover ul.mfld_submenu li{
+		width:100%;
+		float:left;
+		margin:0;
+		padding:0;
+		
+	}
+	.mofluid_menu_ul li:hover ul.mfld_submenu li a {
+		border-bottom:1px solid #ccc;
+		line-height:30px;
+		color:#fff;
+		padding:10px;
+		display:block;
+		border-radius:0px;
+	}
+	.mofluid_menu_ul li:hover ul.mfld_submenu li:last-child a {
+		border:0;
+	}
+	#element-291 {
+		display:none;
+	}
+	#signup {
+	        background-image: linear-gradient(bottom, #ff8f00, rgb(281, 169, 26));
+    background-image: -o-linear-gradient(bottom, #ff8f00, rgb(281, 169, 26));
+    background-image: -moz-linear-gradient(bottom, #ff8f00, rgb(281, 169, 26));
+    background-image: -webkit-linear-gradient(bottom, #ff8f00, rgb(281, 169, 26));
+    background-image: -ms-linear-gradient(bottom, #ff8f00, rgb(281, 169, 26));
+   background-image: -webkit-gradient( linear, right bottom, right top, color-stop(0, #FFFFFF), color-stop(0.66, rgba(255, 169, 26, 0)) );
+    border: #3b5998 solid 1px;
+    z-index: 33;
+    line-height: 27px;
+    font-size: 20px
+    display:inline-block;
+    border-radius:4px;
+	}
+
+    @media only screen and (min-width:0px) and (max-width:1199px) {
+	    
+	    #element-291 {
+		display:block;
+    	}
+		.navicon_mfld {
+			display:inline-block;
+			width:40px;
+			cursor:pointer;
+			text-align:center;
+		}
+		.mofluid_topNav {
+    		float:right;
+    		width:40px;
+	    }
+		.mofluid_menu_ul {
+			display:none;
+		}
+		.navicon_mfld .glyphicon {
+			font-size:40px;
+			color:#fff;
+		}
+		.mofluid_menu_ul {
+			width:220px;
+			position:absolute;
+			top:0px;
+			right:0;
+			z-index:99;
+			background:#ccc;
+			border-radius:4px;
+		}
+		.mofluid_menu_ul li{
+			width:100%;
+			background:rgba(0,0,0,0.5);
+			color:#fff;
+			float:left;
+			margin:0;
+			padding:0;
+			position:relative;
+		}
+		.mofluid_menu_ul li a {                                <div class="page-element widget-container page-element-type-html widget-html " id="element-283" ng-controller="LoginCtrl">
+		
+			width:100%;
+			float:left;
+			margin:0;
+			border-bottom:1px solid #ccc;
+			padding:10px 0;
+		}
+		.mofluid_menu_ul li a:hover {
+		    border-radius:0;
+		    background:none;
+		}
+		.mofluid_menu_ul li:hover ul.mfld_submenu {
+		left:0;
+		top:40px;
+		display:block;
+		border-radius:4px;
+	}
+		.mofluid_menu_ul li:last-child a {
+		    border:0;
+		}
+		.mofluid_menu_ul li ul.mfld_submenu {
+    		position:absolute;
+    		background:#000;
+    		z-index:999;
+		}
+		.mofluid_menu_ul li ul.mfld_submenu li a{
+		    border-radius:0;
+		    padding:10px 0;
+		    
+		}
+		.mofluid_menu_ul li:hover ul.mfld_submenu li a {
+		    padding:10px 0;
+		    
+		}
+	}
+	@media only screen and (min-width:980px) and (max-width:1199px) {
+	    	.mofluid_menu_ul {
+			width:220px;
+			position:absolute;
+			top:50px;
+			right:58px;
+			z-index:99;
+			background:#ccc;
+			border-radius:4px;
+		}
+	    
+	}
+	@media only screen and (min-width:0px) and (max-width:767px) {
+    	#element-60 .dynamic-button, #element-60 .image-button {
+        line-height: 20px !important;
+    }
+}
+</style>
+ 		<script src="../assets/global/plugins/angularjs-1.5.6/angular.min.js"></script>
+        <script src="../assets/global/plugins/angularjs-1.5.6/angular-route.min.js"></script>
+        <script src="../assets/global/plugins/angularjs-1.5.6/angular-cookies.min.js"></script>
+        <script src="../thirdParty/angular-local-storage.js"></script>
+		<script src="../assets/global/plugins/angularjs-1.5.6/angular-animate.min.js"></script>
+		<script src="../assets/global/plugins/angularjs-1.5.6/angular-messages.min.js"></script>
+		<script src="../assets/global/plugins/angularjs-1.5.6/angular-resource.min.js"></script>
+		<script src="../assets/global/plugins/angularjs-1.5.6/angular-sanitize.min.js"></script>
+		<script src="../thirdParty/jstz.min.js"></script>
+		<script src="../js/Home.js"></script>
+		<script src="../js/login.js"></script>
+		<script src="../js/Utils.js"></script>
+</head>
+<body class=" new_mobile" style="display: block;" ng-app="MyApp" >
+<style>
+  form {
+    margin: 0;
+    padding: 42px;
+    border-radius: 13px;
+  }
+  input[type="submit"] {
+    background-color: #3B5998;
+    color: #fff;
+    padding: 0px 60px 0px 60px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-color: #3B5998;
+    font-size: 20px;
+    height: 50px;
+    float: left;
+    font-weight: normal;
+}
+  input[type="text"] {
+    border: 1px solid #3B5998;
+    padding: 9px 0px 10px 9px;
+    border-radius: 6px;
+    margin: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-style: italic;
+    width: 100%;
+    height: 29px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    text-align: left;
+}
+ input[type="email"] {
+    border: 1px solid #3B5998;
+    padding: 9px 0px 10px 9px;
+    border-radius: 6px;
+    margin: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    font-style: italic;
+    width: 100%;
+    height: 29px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    text-align: left;
+ }
+  form h3 {
+    color: #3b5998;
+    font-size: 2.6em;
+    float: left;
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+
+  #mydiv {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .8;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;
+}
+.try-for-free
+{
+    clear: both;
+    text-align: left;
+}
+ </style>					
+		<div id="i-page" class="page page2 ">
+			<div class="notification">
+				<div class="notification-overlay"></div>
+				<div class="notification-inner">
+					<img rel="//storage.googleapis.com/instapage-app-assets/332/img/loading_circle.svg" src="./../appifyAssets/loading_circle.svg" class="loading notification-loader" alt="" >
+					<span class="message"></span>
+					<span class="close-button" onclick="jQuery(this).parent().parent().hide()">Close</span>
+				</div>
+			</div>
+			<div class="page-block" id="page-block-5syvugne3qxe0zfr">
+						<div class="color-overlay"></div>
+						<div class="border-holder">
+							<div class="block-inner">
+																											<div class="page-element widget-container page-element-type-image widget-image " id="element-291">
+
+	
+<div class="contents">
+						<img src="./../appifyAssets/8149473-0-bars.png" style="height: 100%; width: 100%; margin-top: 0px;" alt="">
+		
+	</div>
+</div>
+<div class="page-element widget-container page-element-type-html widget-html " id="element-284">
+	<div class="contents">
+		<div class="mofluid_topNav">
+		<ul class="mofluid_menu_ul">
+			<li><a href="http://appifycart.com/features">Features</a></li>
+			<li><a href="http://appifycart.com/pricing">Pricing</a></li>
+			<li><a href="http://appifycart.com/demo">Demo</a></li>
+			<li><a href="http://appifycart.com/contact-us">Custom Request</a></li>
+			<li id="signup"><a href="http://appifycart.com/get-started/">Get Started For Free</a></li>
+		</ul>
+		<span class="navicon_mfld1">
+		</span>
+		</div>
+	</div>
+</div>
+
+<div class="page-element widget-container page-element-type-html widget-html " id="element-283" ng-controller="LoginCtrl">
+	<div class="contents">
+	<form method="post" ng-submit="doRegister()">
+		<h3 data-drip-attribute="headline">Sign up to get an app for your Shopify Store </h3>
+		<h4 class="try-for-free">14 day free trial. No credit card required.</h4>
+	  	<div data-drip-attribute="description"></div>
+	    <div>
+	        <input type="email" name="fields[email]" value="" ng-model="email" placeholder="Your Email Address" required='required'>
+	    </div>
+	    <div>
+	        <input type="text" name="fields[your_organisation]" ng-model="fullname" value="" placeholder="Your Organization" required='required'>
+	    </div>
+	 	<div>
+	    	<input type="submit" name="submit" value="Get Started" data-drip-attribute="sign-up-button">
+	  	</div>
+	</form>
+	</div>
+</div>
+
+<div class="page-element widget-container page-element-type-line-horizontal widget-line-horizontal " id="element-287">
+	<div class="line-horizontal" style="width: auto; height: 10px; border-bottom: 1px solid #bfbfbf;"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-image widget-image " id="element-304">
+
+	
+<div class="contents">
+			<a href="http://appifycart.com/" style="width: 100%; height: 100%;">
+						<img src="./../appifyAssets/8509008-0-8148813-0-apple-1-1-.png" style="height: 100%; width: 100%; margin-top: 0px;" alt="">
+		
+			</a>
+	</div>
+</div>
+
+																																		</div>
+						</div>
+					</div>
+									<div class="page-block" id="page_block_below_fold">
+						<div class="color-overlay"></div>
+						<div class="border-holder">
+							<div class="block-inner">
+																											<div class="page-element widget-container page-element-type-box widget-box " id="element-182">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #cdcdcd; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: right top; background-image: url(&#39;//storage.googleapis.com/instapage-user-media/a1ab1db8/5622763-0-pexels-photo.jpg&#39;);"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-text widget-text " id="element-165">
+
+	<div class="contents"><p style=" ">Seamlessly integrate product category and catalog from Shopify&nbsp;website.</p></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-text widget-text " id="element-179">
+
+	<div class="contents"><p style=" ">We will provide you both debug and production build so that you can test before releasing on iTunes.<em class="scribe-marker"></em></p></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-line-vertical widget-line-vertical " id="element-187">
+
+	<div class="line-vertical" style="width: 10px; height: 100%; border-right: 2px solid #3b5998;"></div>
+
+</div>
+
+																													<div class="page-element widget-container page-element-type-box widget-box " id="element-162">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #cdcdcd; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: right top; background-image: url(&#39;//storage.googleapis.com/instapage-user-media/a1ab1db8/6962988-0-photo-1460925895917-.jpeg&#39;);"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-167">
+
+	
+<div class="contents"><h1><p style="text-align: center;  "><b><font color="#efefef"><em class="scribe-marker"></em>02<em class="scribe-marker"></em></font></b></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-181">
+
+	
+<div class="contents"><h1><p style="text-align: center;  "><b><font color="#efefef"><em class="scribe-marker"></em>03<em class="scribe-marker"></em></font></b></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-box widget-box " id="element-188">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #3b5998; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: top left;"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-156">
+
+	
+<div class="contents"><h1><p style="text-align: center;  "><b><font color="#106d9c">GET STARTED</font></b></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-box widget-box " id="element-168">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #cdcdcd; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: right top; background-image: url(&#39;//storage.googleapis.com/instapage-user-media/a1ab1db8/6520013-0-39348.jpg&#39;);"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-box widget-box " id="element-169">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #3b5998; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: top left;"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-text widget-text " id="element-157">
+
+	<div class="contents"><p style=" ">Set your brand's logo , banner and color scheme to maintain your brand identity.<em class="scribe-marker"></em></p></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-line-vertical widget-line-vertical " id="element-189">
+
+	<div class="line-vertical" style="width: 10px; height: 100%; border-right: 2px solid #3b5998;"></div>
+
+</div>
+
+																													<div class="page-element widget-container page-element-type-line-vertical widget-line-vertical " id="element-158">
+
+	<div class="line-vertical" style="width: 10px; height: 100%; border-right: 2px solid #3b5998;"></div>
+
+</div>
+
+																													<div class="page-element widget-container page-element-type-box widget-box " id="element-190">
+
+	
+<div class="box" style="width: 100%; height: 100%; background-color: #3b5998; border-radius: 0px 0px 0px 0px; opacity: 1; filter:alpha(opacity=100); background-repeat: repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position: top left;"></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-159">
+
+	
+<div class="contents"><h1><p style="text-align: center;  "><b><font color="#efefef"><em class="scribe-marker"></em>01<em class="scribe-marker"></em></font></b></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-line-horizontal widget-line-horizontal " id="element-292">
+
+	<div class="line-horizontal" style="width: auto; height: 10px; border-bottom: 1px solid #bfbfbf;"></div>
+
+</div>
+
+																																		</div>
+						</div>
+					</div>
+									<div class="page-block" id="page-block-3m1o81ntew90jum3hv76kzkt9">
+						<div class="color-overlay"></div>
+						<div class="border-holder">
+							<div class="block-inner">
+																											<div class="page-element widget-container page-element-type-text widget-text " id="element-300">
+
+	<div class="contents"><p style="text-align: left;  "><font color="#919191"><b><a href="https://www.facebook.com/appifycart" rel="null" type="url" id="link-0lbtf24939rg5codp4nmd0lik9" class="url-link">Facebook</a></b></font></p><p style="text-align: left;  "><font color="#919191"><b><a href="https://twitter.com/appifycart" rel="null" type="url" id="link-ujq1966menonsvjlfj5dbo6r" class="url-link">Twitter</a></b></font></p><p style="text-align: left;  "><font color="#919191"><b>LinkedIn</b></font></p></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-294">
+
+	
+<div class="contents"><h1><p style=" "><font color="#919191"><b>ABOUT<em class="scribe-marker"></em></b></font></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-text widget-text " id="element-298">
+
+	<div class="contents"><p style=" "><b><a href="http://appifycart.com/about/" rel="null" type="url" id="link-uw340nwzzhsprxmhjsxxbt9" class="url-link">About Us</a></b></p><p style=" "><b>Blog</b></p><p style=" "><b>Clients</b></p><p style=" "><b>Reviews</b></p><p style=" "><b>Partners</b></p></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-295">
+
+	
+<div class="contents"><h1><p style=" "><font color="#919191"><b>RESOURCES<em class="scribe-marker"></em></b></font></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-293">
+
+	
+<div class="contents"><h1><p style=" "><font color="#919191"><b><em class="scribe-marker"></em>VISIT<em class="scribe-marker"></em></b></font></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-headline widget-headline " id="element-296">
+
+	
+<div class="contents"><h1><p style=" "><font color="#919191"><b>CONNECT<em class="scribe-marker"></em></b></font></p></h1></div>
+</div>
+
+																													<div class="page-element widget-container page-element-type-text widget-text " id="element-299">
+
+	<div class="contents"><p style=" "><b>Support Desk</b></p><p style=" "><b><a href="http://clients.ebizontek.com/clientarea.php" rel="null" type="url" id="link-9gvc92hkjvimugcmo0llerk9" class="url-link">Sign In</a></b></p><p style=" "><b><a href="http://appifycart.com/contact-us/" rel="null" type="url" id="link-ro5mwrwffclevsuy2no8ncdi" class="url-link">Contact Us</a></b></p><p style=" "><b><a href="http://appifycart.com/terms-and-condition/" rel="null" type="url" id="link-rsr17bpr0nahqecd56ogvi" class="url-link"><em class="scribe-marker"></em>Terms &amp; Conditions<em class="scribe-marker"></em></a></b></p><p style=" "><b><a href="http://appifycart.com/privacy-policy/" rel="null" type="url" id="link-8kzbszjhiw1uw3cqfs41mj9k9" class="url-link">Privacy Policy</a></b></p></div>
+</div>
+
+<div class="page-element widget-container page-element-type-text widget-text " id="element-297">
+	<div class="contents"><p style=" "><font color="#919191"><b>Alan Jacobson,</b></font></p><p style=" "><font color="#919191"><b>Director of Client Services,</b></font></p><p style=" "><font color="#919191"><b>1530 Chela Avenue, Suite 202</b></font></p><p style=" "><font color="#919191"><b>Norfolk, VA 23503</b></font></p><p style=" "><font color="#919191"><b>EMAIL: info@appifycart.com</b></font></p><p style=" "><font color="#919191"><b>Contact: +1 757 646 1562 (USA)<em class="scribe-marker"></em></b></font></p></div>
+</div>
+<div class="page-element widget-container page-element-type-text widget-text " id="element-303">
+	<div class="contents"><p style="text-align: center;  "><font color="#898f9c"><b><em class="scribe-marker"></em>COPYRIGHT © 2013: EBIZON NETINFO PVT. LTD. ALL RIGHTS RESERVED<em class="scribe-marker"></em></b></font></p>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+		
+<div id="fb-root"></div>
+
+		<!-- visitor pixel --><script type="text/javascript" data-cfasync="false" class="instapage-noscrap">
+	window.__conversions_settings = {"forms":true,"links":["http:\/\/appifycart.com\/about\/","http:\/\/clients.ebizontek.com\/clientarea.php","http:\/\/appifycart.com\/contact-us\/","http:\/\/appifycart.com\/terms-and-condition\/","http:\/\/appifycart.com\/privacy-policy\/","http:\/\/appifycart.com"],"external":false,"changed_by_user":false};
+	function iCopyKeenEvent( name, properties )
+	{
+		var params_copy = window.__keen_io_called_parameters.slice();
+		var data = {};
+		properties = properties || {};
+
+		for( i in params_copy[ 2 ] )
+		{
+			if( params_copy[ 2 ].hasOwnProperty( i ) )
+			{
+				data[ i ] = params_copy[ 2 ][ i ];
+			}
+		}
+
+		for( i in properties )
+		{
+			if( properties.hasOwnProperty( i ) )
+			{
+				data[ i ] = properties[ i ];
+			}
+		}
+
+		if( name === 'conversion' && window.__unique )
+		{
+			if( window.__unique.isVisited() )
+			{
+				data[ 'responsive_mode' ] = window.__unique.isResponsiveMode() ? 'mobile' : null;
+			}
+		}
+
+
+		params_copy.splice( 1, 2, name, data );
+		return params_copy;
+	}
+
+	function iEncodePixelUrl( id, event, data, key )
+	{
+		var endpoint = "anthill.instapage.com" + '/projects/' + id + '/events/' + event;
+		var query = 'api_key=' + key + '&data=' + base64_encode( JSON.stringify( data ) );
+		var image_url = '//' + endpoint + '?' + query;
+
+		return image_url;
+	}
+
+	function iCreateTrackingPixel( src )
+	{
+		return ijQuery( '<img>')
+			.attr( {
+				src: src,
+				width: 1,
+				height: 1,
+				alt: '',
+				title: '',
+				style: 'display: table-cell; height: 0; position: absolute; left: -9999999px; top: -999999px;'
+			} )
+	}
+
+	ijQuery( document ).on( 'ready', function()
+	{
+		var cookie_name = 'instapage-visit-2670858';
+		var parameters = {"user_id":86638,"page_id":2670858,"published_version":76,"quantity":1,"static_page":false,"variation_name":"A","variation_id":1,"linked_variation_id":2,"initial_responsive_mode":null,"visitor_ip":"125.63.92.230","useragent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/54.0.2840.98 Safari\/537.36"};
+		var id = '2670858';
+		var track_returning_visitors = false;
+
+		var project_id = '56c2f3d796773d0a7e96a536';
+		var event = 'visit';
+		var key = 'bc14c9411c6c7fbc143d2e94f1d28eddd54202f91a94c5ad6e86aa2d27e6623e0099341c87a979e193580066753ce5b0c6a06cea988528c416f1be094df23347e9f9c5c9ddc9ecdc985b9ede890ce830a15a748835cb63c12124b68d57e18eaad13160b21c3e61a4d02e58003f828cee29a6170313917333910d6477a7fb200c';
+
+		parameters.javascript = true;
+		parameters.variation = parameters.variation_name;
+		parameters.generation_time = '43';
+		parameters.responsive_mode = null;
+
+		if( window.__mobile_version === 2 && window.innerWidth < 600 && window.__variant.indexOf( '-mobile' ) < 0 )
+		{
+			window.__variant += '-mobile';
+			parameters.responsive_mode = 'mobile';
+		}
+		else if( window.__variant.indexOf( '-mobile' ) > 0 )
+		{
+			parameters.responsive_mode = 'mobile';
+		}
+
+		window.__unique = new InstapageUniqueVisit( cookie_name, {
+			variant: parameters.variation_name,
+			responsive_mode: parameters.responsive_mode,
+			reset: {}		} );
+
+		parameters.visited = window.__unique.isVisited();
+		window.__keen_io_called_parameters = [ project_id, event, parameters, key ];
+		if( !parameters.visited || track_returning_visitors )
+		{
+			iCreateTrackingPixel( iEncodePixelUrl( project_id, event, parameters, key ) )
+				.appendTo( ijQuery( 'body' ) );
+
+			window.__unique.setResponsiveMode( parameters.responsive_mode );
+			window.__unique.setVisited();
+			window.__unique.save();
+		}
+
+		if( window.__conversions_settings.external && typeof $.cookie( 'instapage.conversion' + id ) === 'undefined' )
+		{
+			var parameter_pixel = iCopyKeenEvent("conversion", {
+				conversion_type: "form"
+			});
+			var external_image = iEncodePixelUrl.apply( iEncodePixelUrl, parameter_pixel );
+
+			var data = {
+				page_id: id,
+				variation: parameters.variation_name,
+				external_image: external_image,
+				timestamp_created: Date.now(),
+				timestamp_sent: null
+			}
+
+			$.cookie( 'instapage.conversion' + id, JSON.stringify( data ), {
+				expires: 7,
+				path: '/'
+			} );
+		}
+	} );
+
+</script>
+<noscript class="instapage-noscrap">
+	&lt;img href="//anthill.instapage.com/projects/56c2f3d796773d0a7e96a536/events/visit?api_key=bc14c9411c6c7fbc143d2e94f1d28eddd54202f91a94c5ad6e86aa2d27e6623e0099341c87a979e193580066753ce5b0c6a06cea988528c416f1be094df23347e9f9c5c9ddc9ecdc985b9ede890ce830a15a748835cb63c12124b68d57e18eaad13160b21c3e61a4d02e58003f828cee29a6170313917333910d6477a7fb200c&amp;data=eyJ1c2VyX2lkIjo4NjYzOCwicGFnZV9pZCI6MjY3MDg1OCwicHVibGlzaGVkX3ZlcnNpb24iOjc2LCJxdWFudGl0eSI6MSwic3RhdGljX3BhZ2UiOmZhbHNlLCJ2YXJpYXRpb25fbmFtZSI6IkEiLCJ2YXJpYXRpb25faWQiOjEsImxpbmtlZF92YXJpYXRpb25faWQiOjIsImluaXRpYWxfcmVzcG9uc2l2ZV9tb2RlIjpudWxsLCJ2aXNpdG9yX2lwIjoiMTI1LjYzLjkyLjIzMCIsInVzZXJhZ2VudCI6Ik1vemlsbGFcLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xMl8wKSBBcHBsZVdlYktpdFwvNTM3LjM2IChLSFRNTCwgbGlrZSBHZWNrbykgQ2hyb21lXC81NC4wLjI4NDAuOTggU2FmYXJpXC81MzcuMzYiLCJnZW5lcmF0aW9uX3RpbWUiOjMxfQ==" &gt;
+</noscript>
+<!-- end -->
+		
+	<script type="text/javascript" data-cfasync="false">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6ac1534335","applicationID":"31301350","transactionName":"Nl1SZhZUXktUVUdeDg8XZUANGllWUVNLGREJSA==","queueTime":0,"applicationTime":54,"atts":"GhpREF5OTUU=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+</body>
+
+</html>

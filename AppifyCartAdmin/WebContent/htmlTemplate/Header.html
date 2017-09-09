@@ -1,0 +1,160 @@
+<style>
+.dropdownBGColor{
+        background-color: #333c43;
+}
+.header{
+    position:relative;
+    right: 14em;
+    top: -5em;
+}
+.dropbtn {
+    color: #fff;
+    background-color: #333c43;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333c43;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {}
+
+.show {
+    display:block;
+}
+
+.li-btn-header{
+    float:right;
+    margin: 22px 10px 0 0;
+    border-radius: 4px !important;
+}
+.btn-header{
+    border-radius: 4px !important;
+}
+</style>
+
+<!-- BEGIN HEADER -->
+<header class="page-header">
+    <nav class="navbar mega-menu" role="navigation">
+        <div class="container-fluid">
+            <div class="clearfix navbar-fixed-top">
+                <div class="topbar-actions">
+                    <!-- BEGIN USER PROFILE -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="toggle-icon">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </span>
+                    </button>
+
+                    <div class="dropdown" ng-controller="HomeCtrl">
+                        <button ng-click="myAccount()" class="dropbtn"><i class="icon-settings"></i> My Account
+                        </button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="javascript:;" ng-click="myProfile()"> MyProfile
+                            </a>
+                            <a href="javascript:;" ng-click="myApps()">MyApps
+                            </a>
+                            <a href="javascript:;" ng-click="logout()"> Logout
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- END USER PROFILE -->
+                </div>
+            </div>
+            <!-- BEGIN HEADER MENU -->
+            <div class="nav-collapse collapse navbar-collapse navbar-responsive-collapse" ng-controller="HomeCtrl">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown dropdown-fw dropdown-fw-disabled  active open selected">
+
+                        <!-- before <a  target="_self" ng-href="AppifyMain.html" class="text-uppercase">-->
+                        <a  target="_self" ng-href="DevelopmentAppCreator.html" class="text-uppercase">
+                            <img src="../assets/pages/img/appifyCart.png" alt="">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-fw">
+                            <li class="dropdown more-dropdown-sub">
+                                <a href="javascript:;" ng-click="toggleClassDropdownMenu($event)">
+                                    <i class="icon-bar-chart"></i> App Management </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a target="_self" ng-href="BannerLogo.html"> Theme Configuration </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" ng-href="SocialLoginConfig.html"> Social Login Configuration </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" ng-href="PushNotificationConfig.html"> Push Notification Configuration </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" ng-href="PushNotification.html"> Push Message </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" ng-href="CategoryMap.html">Map Categories </a>
+                                    </li>
+                                    <li>
+                                        <a target="_self" ng-href="CustomiseHomePage.html">Customise App </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown more-dropdown-sub" ng-hide="!isShopifyAppUser">
+                                <a href="javascript:;" ng-click="toggleClassDropdownMenu($event)">
+                                    <i class="icon-arrow-up"></i> Upgrade </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a target="_self" ng-href="AppifyPricing.html">Pricing</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a target="_self" ng-href="CMSPages.html">
+                                    <i class="icon-bar-chart"></i> CMS PAGES
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a target="blank" ng-href="FAQs.html" href="https://appifycart.zendesk.com/hc/en-us/articles/115001627213-FAQs">
+                                    <i class="icon-question"></i> FAQs
+                                </a>
+                            </li>
+                            <li class="li-btn-header">
+                                <button class="btn green btn-header" ng-click="openAppifyMain()" >Create App</button>
+                            </li>
+                            <li class="li-btn-header">
+                                <button class="btn btn-outline green btn-header" ng-click="openMyApps()" >My Apps</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- END HEADER MENU -->
+        </div>
+        <!--/container-->
+    </nav>
+</header>
+<!-- END HEADER -->

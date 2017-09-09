@@ -1,0 +1,118 @@
+<h3 class="block">Provide your store details for creating Android and iOS apps.</h3>
+
+<div class="form-group form-md-radios">
+    <label class="col-md-3 control-label"
+           for="form_control_1">Mobile OS</label>
+    <div class="col-md-9">
+        <div class="md-radio-inline">
+            <div class="md-radio">
+                <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_9" name="radio2"
+                       value="ios" class="md-radiobtn"> <label
+                    for="checkbox1_9"> <span style="visibility: hidden;"></span> <span
+                    class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+                <div id="mobile-icon-ios" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-android')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M52.4 8h-24.9c-1.9 0-3.5 1.6-3.5 3.5v57c0 1.9 1.6 3.5 3.5 3.5h25c1.9 0 3.5-1.6 3.5-3.5v-57c-.1-1.9-1.7-3.5-3.6-3.5zm-13.9 3h3c.3 0 .5.2.5.5s-.2.5-.5.5h-3c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm1.5 59c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-1 2-2 2zm13.9-6h-27.9v-48h27.9v48z"></path>
+                    </svg>
+                    <span style="color: #3c4858; display: block; margin-left: 35%;">iOS</span>
+                </div>
+            </label>
+            </div>
+
+            <div class="md-radio">
+                <input type="radio" ng-model="ostype" ng-change='osChanged(ostype)' id="checkbox1_8" name="radio2"
+                       value="android" class="md-radiobtn"> <label
+                    for="checkbox1_8"> <span style="visibility: hidden;"></span> <span
+                    class="check" style="visibility: hidden;"></span> <span class="box" style="visibility: hidden;"></span>
+
+                <div id="mobile-icon-android" class="mobile-icon" onclick="chooseOsType(this,'mobile-icon-ios')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" class="phone-icon"><path d="M50.7 8h-21.5c-2.8 0-5.2 2.3-5.2 5.1v53.8c0 2.8 2.3 5.1 5.2 5.1h21.6c2.8 0 5.2-2.3 5.2-5.1v-53.8c-.1-2.8-2.4-5.1-5.3-5.1zm-13.3 2h5.1c.3 0 .5.2.5.5s-.2.5-.5.5h-5.1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5zm5.5 59.2c0 .6-.5.9-1 .9h-4c-.6 0-1-.4-1-.9v-.1c0-.6.5-1 1-1h4c.5 0 1 .4 1 1.1zm11-3.1h-27.9v-52.1h27.9v52.1z"></path>
+                    </svg>
+                    <span style="color: #3c4858; display: block; margin-left: 12%;">ANDROID</span>
+                </div>
+            </label>
+            </div>
+            <a class="btn default" onclick="popitup('WhichOSType.html')">
+                <i class="fa fa-question-circle"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="form-group" ng-hide="isShopifyAppUser">
+    <label class="control-label col-md-3">Store Platform</label>
+    <div class="col-md-4">
+        <select name="store_plateform" id="store_plateform_list" ng-model="platform" class="form-control">
+            <option value="Shopify">Shopify</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3">Store Website
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <input type="text" id="store_websiteID" class="form-control" name="store_website" ng-model="store_website" />
+        <span class="help-block"> Provide your store's website address </span>
+    </div>
+    <a class="btn default" onclick="popitup('ShopifyWebsiteHelp.html')">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3">Name of App
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <input type="text" id="name_of_appID" class="form-control" name="name_of_app" ng-model="name_of_app"/>
+        <span class="help-block"> Name of App you like to have in app store </span>
+    </div>
+    <a class="btn default" onclick="popitup('NameOfAppHelp.html')">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</div>
+<div class="form-group" ng-hide="isShopifyAppUser">
+    <label class="control-label col-md-3">API Key
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <input type="text" id="store_api_keyID" class="form-control" name="store_api_key", ng-model="store_api_key"/>
+        <span class="help-block"> API Key from store </span>
+    </div>
+    <a class="btn default" onclick="popitup('APIKeyHelp.html')">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</div>
+<div class="form-group" ng-hide="isShopifyAppUser">
+    <label class="control-label col-md-3">API Key's password
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <input type="textd" id="store_api_passwordID" class="form-control" name="store_api_password"  ng-model="store_api_password"/>
+        <span class="help-block"> Password of above added API Key of store </span>
+    </div>
+    <a class="btn default" onclick="popitup('APIPasswordHelp.html')">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</div>
+<div class="form-group ng-hide" >
+    <label class="control-label col-md-3">AcessToken
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <input type="textd" id="store_shopify_accessToken" class="form-control" name="store_shopify_accessToken"  ng-model="store_shopify_accessToken"/>
+        <span class="help-block"> AcessToken for your store </span>
+    </div>
+    <a class="btn default" onclick="popitup('APIPasswordHelp.html')">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-3">App Language
+        <span class="required"> * </span>
+    </label>
+    <div class="col-md-4">
+        <select name="app_language_list" id="app_language" ng-model="app_language" class="form-control" required>
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+        </select>
+    </div>
+</div>

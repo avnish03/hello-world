@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AppifyCart | Build Mobile App for Shopify Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="../assets/pages/css/login.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL STYLES -->
+    <link rel="shortcut icon" href="https://storage.googleapis.com/instapage-user-media/405cb106/7983323-0-apple-1.png" type="image/ico">
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-route.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-cookies.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-animate.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-messages.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-resource.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-sanitize.min.js"></script>
+    <script src="../thirdParty/angular-local-storage.js"></script>
+
+    <!-- Application Code -->
+    <script src="../js/Home.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+
+<body class=" login" ng-app="MyApp">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="login.html">
+        <img src="../assets/pages/img/appifyCart.png" alt="" style="float: left; margin-left: 2%;"> </a>
+
+    <label style="float: right; font-weight: 400; color: #3b5998; font-size: 20px; padding: 10px;">Boost sales for your store with  Android and IOS Apps</label>
+</div>
+<!-- END LOGO -->
+<!-- BEGIN LOGIN -->
+<div class="content" ng-controller="LoginCtrl" style="margin-top: 140px;">
+    <!-- BEGIN LOGIN FORM -->
+    <form class="login-form" method="post" ng-submit="doLogin()" >
+        <h3 class="form-title font-appify-theme">Sign In</h3>
+        <div class="alert alert-danger alert-values-required display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> Enter username and password. </span>
+        </div>
+        <div class="alert alert-danger alert-loginfailed display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> The email and password combination entered is incorrect. </span>
+        </div>
+        <div class="alert alert-danger alert-user-not-exists display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> There is no account with that email. </span>
+        </div>
+        <div class="alert alert-registerd display-hide">
+            <button class="close" data-close="alert"></button>
+            <span>First time user? Please check your email for username and password. </span>
+        </div>
+        <div class="alert alert-danger alert-already-registerd display-hide">
+            <button class="close" data-close="alert"></button>
+            <span>You are already registered. Please login or click on "forgot password".</span>
+        </div>
+        <div class="alert alert-danger alert-passwordReset display-hide" style="padding-top: 0 !important;">
+            <span>We have sent you an email to reset your password, please check your inbox.</span>
+        </div>
+        <div class="form-group">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <div class="input-group" style="margin-bottom: 20px">
+                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                <input class="form-control" type="text" autocomplete="off" ng-model="username" placeholder="Username" name="username" ng-keypress="($event.charCode==13)? doLogin() : return" style="border: 1px solid #ccc;">
+            </div>
+        </div>
+        <!--
+              <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" ng-model="username" placeholder="Username" name="username" /> </div>
+        -->
+        <div class="form-group">
+            <div class="input-group" style="margin-bottom: 20px">
+                <span class="input-group-addon"><i class="fa fa-lock fa fa-lg"></i></span>
+                <input class="form-control" type="password" autocomplete="off" ng-model="password" placeholder="Password" name="password" ng-keypress="($event.charCode==13)? doLogin() : return" style="border: 1px solid #ccc;" />
+            </div>
+        </div>
+        <!--
+               <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" ng-model="password" placeholder="Password" name="password" /> </div>
+        -->
+        <div class="form-actions">
+            <a href="javascript:;" class="btn green button-submit" ng-keypress="($event.charCode==13)? doLogin() : return" ng-click='doLogin()'>Login</a>
+            <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+        </div>
+    </form>
+    <!-- END LOGIN FORM -->
+    <!-- BEGIN FORGOT PASSWORD FORM -->
+    <form class="forget-form" action="login.html" method="post" ng-submit="doSendResetPassword()">
+        <h3 class="font-appify-theme">Forget Password ?</h3>
+        <p>We will send you an email to reset your password </p>
+        <span id="forget-help-text" style="color: red; margin: 20px;"></span>
+        <div class="form-group">
+            <input class="form-control placeholder-no-fix" type="text" ng-model="passwordEmail" ng-keypress="($event.charCode==13)? doSendResetPassword() : return" autocomplete="off" placeholder="Email" name="email" /> </div>
+        <div class="form-actions">
+            <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
+            <a href="javascript:;" id="forget-password-submit-btn" class="btn green button-submit uppercase pull-right" ng-keypress="($event.charCode==13)? doSendResetPassword() : return"  ng-click='doSendResetPassword()'>Submit</a>
+        </div>
+    </form>
+    <!-- END FORGOT PASSWORD FORM -->
+    <!-- BEGIN REGISTRATION FORM -->
+    <form class="register-form" ng-submit="doRegister()" method="post">
+        <h3 class="font-appify-theme">Sign Up</h3>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">Full Name</label>
+            <input class="form-control placeholder-no-fix" type="text" ng-model="fullname" placeholder="Full Name" name="fullname" /> </div>
+        <div class="form-group">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">Email</label>
+            <input class="form-control placeholder-no-fix" type="text" ng-model="email" placeholder="Email" name="email" /> </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">Password</label>
+            <input class="form-control placeholder-no-fix" type="password" ng-model="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" /> </div>
+        <div class="form-group margin-top-20 margin-bottom-20">
+            <label class="mt-checkbox mt-checkbox-outline">
+                <input type="checkbox" name="tnc" /> I agree to the
+                <a href="javascript:;">Terms of Service </a> &
+                <a href="javascript:;">Privacy Policy </a>
+                <span></span>
+            </label>
+            <div id="register_tnc_error"> </div>
+        </div>
+        <div class="form-actions">
+            <button type="button" id="register-back-btn" class="btn green btn-outline">Back</button>
+            <a href="javascript:;" id="register-submit-btn" class="btn btn-success uppercase pull-right" ng-click='doRegister()'>Register</a>
+        </div>
+    </form>
+    <!-- END REGISTRATION FORM -->
+</div>
+<div class="copyright"> 2017 &copy; Ebizon </div>
+<!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script>
+<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../assets/pages/scripts/login.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 200px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 40%;
+}
+
+/* The Close Button */
+.closeCross {
+    color: #aaaaaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.closeCross:hover,
+.closeCross:focus {
+    color: #0fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.input {
+   margin: 40px 0;
+}
+</style>
+<style type="text/css">
+        html,body{width:100%;margin:0;padding:0;border:none}html{height:100%;font-family:Lucida Grande,sans-serif;background:#333}html.in-iframe{background:transparent}body{height:auto;min-height:100%}#leadpages-close-button{display:block;font-size:16pt;position:absolute;top:-9pt;right:-9pt;width:18pt;height:18pt;color:white;line-height:20pt;text-align:center;text-decoration:none;vertical-align:baseline;cursor:pointer;background:black;border:2pt solid white;-webkit-border-radius:18pt;-moz-border-radius:18pt;border-radius:18pt}.mac #leadpages-close-button,.iphone #leadpages-close-button,.ipad #leadpages-close-button{line-height:16pt}.not-in-iframe #leadpages-close-button{display:none}.not-in-iframe #leadpages-close-button:link{display:block}#leadpages-form-wrapper{display:block;padding:10pt;text-align:center;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:10pt}#leadpages-form{background:white;position:relative;display:block;margin:0 auto;max-width:650pt;padding-top:15pt;padding-right:15pt;padding-bottom:15pt;padding-left:15pt;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:3pt;-moz-border-radius:3pt;border-radius:3pt}#leadpages-form.no-image{max-width:500pt}.leadbox-content-wrapper{display:inline-block;vertical-align:middle;text-align:left;margin:0px;max-width:400pt}.no-image .leadbox-content-wrapper{display:block;margin:0px auto}#leadpages-form-image{display:inline-block;margin:10pt 15pt 5pt 5pt;max-height:265px;max-width:265px;vertical-align:middle}.no-image #leadpages-form-image{display:none}fieldset{display:block;vertical-align:top;margin:0 auto;max-width:400pt;padding:0;border:none}.leadpages-spacer{height:0px;overflow:hidden;font-size:500pt;display:block}#leadpages-form-title{display:inline-block;overflow:hidden;margin-bottom:0.6em;width:100%;max-width:400pt;color:#5a5a5a;font-size:28pt;line-height:1.2;width:100%}#leadpages-form-title em{color:#00a3f0;font-style:normal}#leadpages-submit-button{display:block;overflow:hidden;width:100%;max-width:300pt;margin:0 auto;padding:0.7em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:white;text-align:left;text-shadow:0 0.1em 0.3em rgba(0,0,0,0.3);cursor:pointer;-webkit-border-radius:3pt;-moz-border-radius:3pt;border-radius:3pt}#leadpages-privacy-policy{display:block;overflow:hidden;width:100%;margin:0.7em 0 0 0;padding:0 6pt;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#5a5a5a}#leadpages-privacy-policy strong{font-weight:bold}.control-group{display:block;overflow:hidden;width:100%;margin:1em 0}::-webkit-input-placeholder{color:#999}:-moz-placeholder{color:#999}::-moz-placeholder{color:#999}:-ms-input-placeholder{color:#999}.placeholder{color:#999}.control-label{color:black;font-size:1.2em;padding:0.6em 12pt}select,textarea,input[type="text"],input[type="date"],input[type="number"],input[type="email"],input[type="url"],input[type="tel"],input[type="password"]{display:block;width:100%;margin:0;padding:0.6em 12pt;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;color:#5a5a5a;font-size:1.2em;line-height:1.2em;background:#e1e1e1;border:1pt solid transparent;-webkit-box-shadow:inset 0 2px 3px rgba(0,0,0,0.1);-moz-box-shadow:inset 0 2px 3px rgba(0,0,0,0.1);box-shadow:inset 0 2px 3px rgba(0,0,0,0.1);-webkit-transition:border linear 0.2s,box-shadow linear 0.2s;-moz-transition:border linear 0.2s,box-shadow linear 0.2s;-o-transition:border linear 0.2s,box-shadow linear 0.2s;transition:border linear 0.2s,box-shadow linear 0.2s}textarea{min-width:100%;max-width:100%}select{padding:0.6em 8pt}.mac .webkit select{text-indent:8pt;height:2.2em}select:focus,textarea:focus,input[type="text"]:focus,input[type="date"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="tel"]:focus,input[type="password"]:focus{outline:none;border-color:#94c7f2;background-color:#dcedfb}label.checkbox,label.radio{display:block;margin-bottom:5px;font-size:14px;font-weight:normal;line-height:20px;cursor:default;padding-left:32pt;color:#5a5a5a}label.checkbox:first-child,label.radio:first-child{padding-top:5px}.checkbox input[type="checkbox"],.radio input[type="radio"]{float:left;margin:4px 0 0;margin-top:1px \9;margin-left:-18px;line-height:normal;cursor:pointer}span.error-container{display:none}.error span.error-container{display:block;color:#c72e20}.error select,.error textarea,.error input[type="text"],.error input[type="date"],.error input[type="number"],.error input[type="email"],.error input[type="url"],.error input[type="tel"],.error input[type="password"]{color:#c72e20;border-color:#e35050;background-color:#f7d3d3;-webkit-box-shadow:inset 0 0 13px rgb(238,181,181);-moz-box-shadow:inset 0 0 13px rgb(238,181,181);box-shadow:inset 0 0 13px rgb(238,181,181)}.placeholder{position:relative;margin:0 0 -2.4em 0;padding:0.6em 12pt;font-size:1.2em;line-height:1.2em;z-index:2}.hidden-checkbox-group,.hidden-input-container{display:none}@media (max-width:480px){#leadpages-form-image{margin:3.3pt auto}}@media (max-width:906px){#leadpages-form{max-width:406pt}}
+        #form-preview form,#leadpages-form{background:white;position:relative;display:block;margin:0px auto;padding:5pt 10pt 10pt;max-width:850px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}#form-preview #form-header,#leadpages-form-header{display:block;position:relative;margin:-14px 0px 10px;padding:0;overflow:hidden}#form-preview #form-header-image,#leadpages-form #leadpages-form-header-image{margin-top:7px;max-width:100%}#form-preview form.no-image #form-header-image,#leadpages-form.no-image #leadpages-form-header-image,{max-width:500pt}#form-preview #form-header-image.no-image,#leadpages-form #leadpages-form-header-image.no-image{display:none}#form-header-text,#leadpages-form-header-text{padding-top:10px;text-align:center;border-bottom:1px solid #dadada;padding-bottom:5px;margin-left:62px;margin-right:57px}#form-header-text{}.leadbox-content-wrapper,#form-preview fieldset,fieldset{width:450px;max-width:100%;padding:0}#form-preview fieldset #form-fields,.leadbox-content-wrapper fieldset #form-fields{padding-top:10px}#form-preview div#form-title,#leadpages-form-title{margin-top:1.3em;margin-bottom:0.8em;width:100%;max-width:350pt;color:#201D1D;word-wrap:break-word!important;word-break:normal!important}#form-preview div#form-title,#leadpages-form-title em{color:#201D1D}#form-preview button[type=submit],#leadpages-submit-button{margin:0.2em auto 0;padding:0.9em;color:white;text-align:left;text-transform:uppercase;font-weight:bold;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;line-height:100%;text-shadow:2px 2px 0 #1285dd;max-width:none}#form-preview button[type=submit] span.raquo,#leadpages-submit-button span.raquo{font-size:1.4em;font-style:normal;padding-left:0.2em}#form-preview div#privacy-policy,#leadpages-privacy-policy{color:#828282;overflow:visible;margin-top:0;padding-bottom:20px}#leadpages-form-wrapper select,#leadpages-form-wrapper textarea,#leadpages-form-wrapper input[type="text"],#leadpages-form-wrapper input[type="date"],#leadpages-form-wrapper input[type="number"],#leadpages-form-wrapper input[type="email"],#leadpages-form-wrapper input[type="url"],#leadpages-form-wrapper input[type="tel"],#leadpages-form-wrapper input[type="password"],#form-preview select,#form-preview textarea,#form-preview input[type="text"],#form-preview input[type="date"],#form-preview input[type="number"],#form-preview input[type="email"],#form-preview input[type="url"],#form-preview input[type="tel"],#form-preview input[type="password"]{padding:13px;color:#201D1D;background:white;border:1pt solid #C9D7DD;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;-webkit-transition:none;-moz-transition:none;-o-transition:none;transition:none}#form-preview select,#form-preview textarea,#form-preview input[type="text"],#form-preview input[type="date"],#form-preview input[type="number"],#form-preview input[type="email"],#form-preview input[type="url"],#form-preview input[type="tel"],#form-preview input[type="password"]{width:422px;box-sizing:content-box}#leadpages-form-wrapper select:focus,#leadpages-form-wrapper textarea:focus,#leadpages-form-wrapper input[type="text"]:focus,#leadpages-form-wrapper input[type="date"]:focus,#leadpages-form-wrapper input[type="number"]:focus,#leadpages-form-wrapper input[type="email"]:focus,#leadpages-form-wrapper input[type="url"]:focus,#leadpages-form-wrapper input[type="tel"]:focus,#leadpages-form-wrapper input[type="password"]:focus,#form-preview select:focus,#form-preview textarea:focus,#form-preview input[type="text"]:focus,#form-preview input[type="date"]:focus,#form-preview input[type="number"]:focus,#form-preview input[type="email"]:focus,#form-preview input[type="url"]:focus,#form-preview input[type="tel"]:focus,#form-preview input[type="password"]:focus{outline:none;border-color:#C9D7DD;background-color:white}#leadpages-form-wrapper .error select,#leadpages-form-wrapper .error textarea,#leadpages-form-wrapper .error input[type="text"],#leadpages-form-wrapper .error input[type="date"],#leadpages-form-wrapper .error input[type="number"],#leadpages-form-wrapper .error input[type="email"],#leadpages-form-wrapper .error input[type="url"],#leadpages-form-wrapper .error input[type="tel"],#leadpages-form-wrapper .error input[type="password"],#form-preview .error select,#form-preview .error textarea,#form-preview .error input[type="text"],#form-preview .error input[type="date"],#form-preview .error input[type="number"],#form-preview .error input[type="email"],#form-preview .error input[type="url"],#form-preview .error input[type="tel"],#form-preview .error input[type="password"]{color:#c72e20;border-color:#e35050;background-color:white;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}#leadpages-form-wrapper input[type="email"],#form-preview input[type="email"]{}i.icon-lock{background:transparent url('/static/lb/img/form3-lock-icon.png') no-repeat 0 50%;display:inline-block;height:18px;line-height:normal;margin-top:0;margin-bottom:-4px;text-align:center;text-decoration:none;vertical-align:baseline;width:19px}i.icon-lock:before{content:"";display:inline}#form-preview div#privacy-policy{padding-top:10px}#form-preview div#privacy-policy>*{vertical-align:middle}a#leadpages-close-button{z-index:1;top:-9px;right:-9px}#form-preview form{width:851px}#form-image,#leadpages-form-image{margin:0 15px 0 0}#form-preview .control-group .icon-move,#form-preview .control-group .icon-remove{line-height:36pt}@media (max-width:860px){#leadpages-form-header-image{max-width:100%}#leadpages-form-image{max-width:100%;width:auto}}@media (max-width:360px){#leadpages-form-header-image{display:none}}</style>
+
+
+<div id="registerModel" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div>
+            <span class="closeCross">&times;</span>
+        </div>
+        <div class="modal-header">
+            <h4 class="modal-title">Almost there! Please complete this form and click the button below to gain instant access.</h4>
+        </div>
+
+        <form method="post" action="https://app.appifycart.com/AppifyCartAdmin/rest/admin/formRegister.json">
+            <input type="email" name="user_email" value="" id="fields-email" placeholder="Email" data-source="leadpages-email" data-role="email" required="required"/>
+            <div>
+                <h3></h3>
+            </div>
+            <input type="text" name="user_org" id="fields-org" placeholder="Organisation" data-source="leadpages-company" data-role="company" required="required"/>
+            <div class="control-group">
+                <div class="controls">
+                    <button id="leadpages-submit-button" type="submit" value="Submit" style="font-family: &#34;Open Sans&#34;, Helvetica, Arial, sans-serif; font-size: 14pt; letter-spacing: ; background-color: rgb(18, 133, 221); border-style: solid; border-width: 0pt; border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-color: ; text-shadow: ">
+                        <div style="text-align: center">Get Started Here <span class="raquo">»</span></div>
+                    </button>
+                </div>
+            </div>
+            <div id="leadpages-privacy-policy" style="font-family: &#34;Open Sans&#34;, Helvetica, Arial, sans-serif; font-size: 10pt; letter-spacing: ">
+                <div style="text-align: center"><i class="icon-lock"></i>
+                    We hate SPAM and promise to keep your email address safe.
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('registerModel');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closeCross")[0];
+
+// When the user clicks the button, open the modal
+openRegisterModel = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

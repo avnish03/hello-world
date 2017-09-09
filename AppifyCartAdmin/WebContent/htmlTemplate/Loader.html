@@ -1,0 +1,45 @@
+<style>
+    .modalContainer{
+        position: fixed; /* Stay in place */
+        z-index: 111; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    }
+    .validating-text{
+        text-align: center;
+        color: #fff;
+        font-size: 40px;
+        margin: 0 auto;
+        width: 50%;
+        margin-top: 5%;
+    }
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin: auto;
+        animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<div ng-show="modal_box" class="modalContainer ng-hide" >
+    <div ng-show="modal_box" class="loader ng-hide" >
+        <div class="modal_box">
+            <div class="modal_box"></div>
+        </div>
+    </div>
+    <div ng-show="modal_box" class="validating-text ng-hide" >
+        <h4>Processing . . .</h4>
+    </div>
+</div>

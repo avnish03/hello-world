@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AppifyCart | Pricing</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- BEGIN LAYOUT FIRST STYLES -->
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" />
+    <!-- END LAYOUT FIRST STYLES -->
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="../assets/pages/css/pricing.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="../assets/layouts/layout5/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout5/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://www.2checkout.com/checkout/api/2co.min.js"></script>
+    <link rel="shortcut icon" href="https://storage.googleapis.com/instapage-user-media/405cb106/7983323-0-apple-1.png" type="image/ico">
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-route.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-cookies.min.js"></script>
+    <script src="../thirdParty/angular-local-storage.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-animate.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-messages.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-resource.min.js"></script>
+    <script src="../assets/global/plugins/angularjs-1.5.6/angular-sanitize.min.js"></script>
+    <script src="../thirdParty/angular-ui-router.js"></script>
+    <script src="../thirdParty/angular-toastr.tpls.js"></script>
+    <script src="../thirdParty/satellizer.js"></script>
+    <script src="../thirdParty/jquery-2.1.4.min.js"></script>
+    <script src="../thirdParty/bootstrap.js"></script>
+    <script src="../thirdParty/ui-bootstrap-tpls-0.13.4.min.js"></script>
+
+    <!-- Application Code -->
+    <script src="../js/Home.js"></script>
+    <script src="../js/Pricing.js"></script>
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo" ng-app="MyApp">
+<!-- BEGIN CONTAINER -->
+<div class="wrapper" ng-controller="PricingCtrl">
+    <!-- BEGIN HEADER -->
+    <div ng-include="'../htmlTemplate/Header.html'"></div>
+    <!-- END HEADER -->
+    <div class="container-fluid">
+        <div class="page-content">
+
+            <!-- BEGIN SIDEBAR CONTENT LAYOUT -->
+            <div class="page-content-container">
+                <div class="page-content-row">
+                    <div class="page-content-col">
+                        <!-- BEGIN PAGE BASE CONTENT -->
+                        <div class="portlet light portlet-fit bordered">
+                            <div class="portlet-body">
+                                <div class="ng-hide" ng-hide="getPayment()" >
+                                    <p>You are currently subscribed to {{paymentTitle}}</p>
+                                </div>
+                                <div class="pricing-content-1">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="price-column-container border-active">
+                                                <div class="price-table-head bg-red">
+                                                    <h2 class="no-margin">Basic</h2>
+                                                </div>
+                                                <div class="arrow-down border-top-red"></div>
+                                                <div class="price-table-pricing">
+                                                    <h3>
+                                                        <sup class="price-sign">$</sup>49</h3>
+                                                    <p>per month(paid annually)</p>
+                                                </div>
+                                                <div class="price-table-content">
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Native iOS & Android App</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Unlimited Products</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Push Notification
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Basic Reporting</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">PPayment Gateway - Paypal
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="arrow-down arrow-grey"></div>
+
+                                                <div class="price-table-footer">
+                                                    <a href="{{basicURLPlan}}" type="submit" class="btn green price-button sbold uppercase" ng-disabled='payment == AppifyCart-101'>Buy Now</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="price-column-container border-active">
+                                                <div class="price-table-head bg-green">
+                                                    <h2 class="no-margin">Small Business</h2>
+                                                </div>
+                                                <div class="arrow-down border-top-green"></div>
+                                                <div class="price-table-pricing">
+                                                    <h3>
+                                                        <sup class="price-sign">$</sup>99</h3>
+                                                    <p>per month(paid annually)</p>
+                                                </div>
+                                                <div class="price-table-content">
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Native iOS & Android App</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Unlimited Products</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Geo-based push notification</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Google Analytics</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Payment Gateway - Paypal, Authorize.net</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">2 staff user account</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Email support</div>
+                                                    </div>
+                                                </div>
+                                                <div class="arrow-down arrow-grey"></div>
+
+                                                <div class="price-table-footer">
+                                                    <a type="submit" href="{{smallBusinessPlanURL}}" class="btn green price-button sbold uppercase", ng-disabled='payment == AppifyCart-102'>Buy Now</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="price-column-container border-active">
+                                                <div class="price-table-head bg-green">
+                                                    <h2 class="no-margin">Professional</h2>
+                                                </div>
+                                                <div class="arrow-down border-top-green"></div>
+                                                <div class="price-table-pricing">
+                                                    <h3>
+                                                        <sup class="price-sign">$</sup>299</h3>
+                                                    <p>per month(paid annually)</p>
+                                                </div>
+                                                <div class="price-table-content">
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Native iOS & Android App</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Unlimited Products</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Geo-based push notification</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">In-App analytics</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Payment Gateway - Paypal, Authorize.net & any two prefered payment gateway</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">App store submissions</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">5 Staff user account</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Email/phone support</div>
+                                                    </div>
+                                                </div>
+                                                <div class="arrow-down arrow-grey"></div>
+                                                <div class="price-table-footer">
+                                                    <a ng-href={{professionalPlanURL}} class="btn green price-button sbold uppercase", ng-disabled='payment == AppifyCart-103'>Buy Now</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="price-column-container border-active">
+                                                <div class="price-table-head bg-purple">
+                                                    <h2 class="no-margin">Enterprise</h2>
+                                                </div>
+                                                <div class="arrow-down border-top-purple"></div>
+                                                <div class="price-table-pricing">
+                                                    <h2>
+                                                        <a href="http://appifycart.com/contact-us/">Contact Us</a></h2>
+                                                </div>
+                                                <div class="price-table-content">
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Native iOS & Android App</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Strategy planning</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Account management</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Priority phone & Email support</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">App store submissions</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Rapid Launch</div>
+                                                    </div>
+                                                    <div class="row mobile-padding">
+                                                        <div class="col-xs-3 text-right mobile-padding">
+                                                            <i class="icon-check"></i>
+                                                        </div>
+                                                        <div class="col-xs-9 text-left mobile-padding">Content organization
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- END PAGE BASE CONTENT -->
+            </div>
+        </div>
+    </div>
+    <!-- END SIDEBAR CONTENT LAYOUT -->
+</div>
+<!-- BEGIN FOOTER -->
+<p class="copyright"> 2016 &copy;EbizOn
+</p>
+<!-- END FOOTER -->
+</div>
+</div>
+<!-- END CONTAINER -->
+
+
+<!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script>
+<script src="../assets/global/plugins/ie8.fix.min.js"></script>
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="../assets/layouts/layout5/scripts/layout.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+</body>
+
+</html>
